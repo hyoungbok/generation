@@ -1,0 +1,111 @@
+
+#recomm{width: 1400px; height:500px; margin: 0 auto; /*overflow: hidden;*/}
+#recomm p{float: left; font-size: 1.4em; font-weight: bold}
+#recomm .recomm_btns {float: right; margin-right: 30px;}
+#recomm >ul {position: relative; padding-top: 60px; width: 1400px; }
+#recomm >ul >li {float: left; margin-left: 10px}
+#recomm >ul >li .img{position: relative; }
+#recomm >ul >li img{width: 220px; height: 333px; }
+.info {position: absolute; width: 220px; height: 333px;  background-color: rgba(108,0,107,0.8); top: 0;}
+.info ul{height: 185px; color: #fff; padding:  20px 10px;}
+.info .title{height: 100px; font-size: 1.5em; }
+.info .term{position: relative; font-size: 0.8em; color:#dba1da;}
+.info .place{font-size: 0.8em; color:#dba1da;}
+.info .sale{font-size: 2em; }
+.info .sale_text{font-size: 0.8em;}
+
+.info .btns{padding-left: 10px;}
+.info .btns a{display: block; float: left;width: 55px;height: 55px; text-align: center; line-height: 55px; background: #ff8519;font-weight: bold; color: #ffffff; font-size: 1.15em}
+.info .btns .ss2{ background: #9a5397;}
+
+/*
+.family_site .family_img{float: left;}
+.family_site .family_img ul:after {content: ""; display: block; clear: both;}
+.family_site .family_img ul li{ left: 50px; top: 0px;}
+.family_site .family_img ul li img{width: 200px;}
+*/
+
+
+/*contents_box01*/
+#contents_box01 {width: 1400px; height: 550px; margin: 0 auto;}
+#contents_box01 .academy{float: left; width: 550px; margin-right: 150px;}
+
+#contents_box01 .academy p {font-size: 1.4em; font-weight: bold; margin-bottom: 10px;}
+#contents_box01 .academy ul{float: left; }
+#contents_box01 .academy ul img{ width: 380px; height: 380px;}
+#contents_box01 .academy_info{position: relative; width: 250px; height:380px; left: 380px; background:#2a226d;}
+#contents_box01 .academy_info:after{content:""; position:absolute; top:33%; left:-20px;margin-top:-10px;
+	border-right:20px solid #2a226d;
+	border-top:20px solid transparent;
+	border-bottom:20px solid transparent;}
+#contents_box01 .academy_info:before{content:""; position:absolute; top:33%; left:-13px;margin-top:-10px;
+	border-right:20px solid #574d92 ;
+	border-top:20px solid transparent;
+	border-bottom:20px solid transparent; z-index: 3}
+
+#contents_box01 .academy_info div {position: absolute; top: 5px; left: 5px; width: 240px;height: 370px; text-align: center; color: #ffffff; background-color: #574d92;}
+#contents_box01 .academy_info p:first-child{ padding-top: 50px;}
+#contents_box01 .academy_info span{ position: absolute; left: 10%;  top: 75%;  width: 60px; height: 60px; text-align: center; line-height: 60px; background: #9a5397; font-weight: bold;  font-size: 1.1em}
+#contents_box01 .academy_info span a{color:#ffffff; }
+#contents_box01:after{content: ""; display: block; clear: both;}
+#contents_box01 .season{float: right; width: 660px;}
+#contents_box01 .season p {font-size: 1.4em; font-weight: bold; margin-bottom: 10px;}
+#contents_box01 .season .season_img{position: relative; float: left;}
+.season .season_img ul li{position: absolute; display: none;}
+.season .season_img ul li img{width: 380px; height: 380px;}
+.season .season_text {padding-left: 380px; height: 380px;}
+.season .season_text li{width: 250px; height: 41.2px; line-height: 35.555px; background: #574d92; padding-left: 30px; border-bottom: 1px solid #2a226d;}
+.season .season_text .on {color: #630660; font-weight: bold;font-size: 1.1em;}
+.season .season_text li a{color: #ffffff;}
+
+
+#contents_box02 {width: 1400px; height: 450px; margin: 0 auto;}
+#contents_box02 .space {float: left;}
+#contents_box02 .space{width: 330px; margin-right: 50px;}
+#contents_box02 .space:after{content: ""; display: block; clear: both;}
+.space p{font-size: 1.4em; font-weight: bold; margin-bottom: 10px; float: left}
+.space .plus{float: right; }
+.space .space_img img {width: 330px; margin-bottom: 20px;}
+.space .space_img a div{font-size: 1.3em}
+
+.social{float: left; position: relative; width: 300px; height: 370px; }
+.social > p {float: left; font-size: 1.4em; font-weight: bold; margin-bottom: 10px;}
+.btn_so_left{position: absolute; top: 130px; left: 0; z-index: 2;}
+.btn_so_right{position: absolute; top: 130px; right: 0;z-index: 2;}
+.social_img {float: left;}
+.social_img >ul >li{position: absolute; width: 300px; height: 370px;}
+.social .social_img img {width: 300px;}
+.so_bold{font-weight: bold; font-size: 1.2em; margin: 10px 0;}
+
+.news {width: 590px; height: 250px; float: right;}
+.news>p {font-size: 1.4em; font-weight: bold; margin-bottom: 30px;  }
+.news .news_text {width: 550px; height: 160px; overflow: hidden; line-height: 2;  padding: 20px 10px; border: 1px solid #999999; border-radius: 20px}
+.news .news_text ul .bold{float: left; width: 100px; }
+.news .news_text ul .bold a{color: #e37d1b; font-weight: bold;}
+.news .news_text ul .width {white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 350px; float: left; }
+.news .news_text ul .right{float: right}
+.news .news_text ul .width:hover{text-decoration: underline;}
+
+#contents_box03 {width: 1400px; height: 250px; margin: 0 auto;}
+#contents_box03 .link {width: 1300px; height: 120px; margin: 0 auto; border: 1px solid #999999; padding: 15px 50px;}
+#contents_box03 .link ul li{float: left; margin-right: 70px; margin-top: 10px;}
+#contents_box03 .link ul li.last_nth{margin-right: 0;}
+#contents_box03 .link ul li img{height: 103px;}
+
+
+#contents_box04{width: 1400px; height: 300px; margin: 0 auto; }
+#contents_box04 >div {float: left }
+.family_site {position: relative; width: 900px; height: 150px; background: #fbf5fa; padding: 10px; overflow: hidden;}
+.family_site>p{float: left; font-size: 1.4em; font-weight: bold; margin-bottom: 30px;}
+.family_site .family_btns{float: right;}
+.family_site .family_img{float: left;}
+.family_site .family_img ul:after {content: ""; display: block; clear: both;}
+.family_site .family_img ul li{ left: 50px; top: 0px;}
+.family_site .family_img ul li img{width: 200px;}
+
+.related_site{position: relative; width: 450px; height: 150px; background: #f2edf9; padding: 10px; overflow: hidden;}
+.related_site > p{float: left; font-size: 1.4em; font-weight: bold; margin-bottom: 30px;}
+.related_btns {float: right;}
+.related_img{float: left; margin-left: 12px;}
+.related_img ul li img{width: 200px;}
+

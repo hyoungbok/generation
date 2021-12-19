@@ -1,0 +1,50 @@
+
+@font-face {
+  font-family: "Lime_R";
+  src: url(../font/210\ Lime\ R.ttf)
+    	format("truetype");
+}
+@font-face {
+  font-family: "Lime_B";
+  src: url(../font/210\ Lime\ B.ttf)
+    	format("truetype");
+}
+
+
+@font-face {
+  font-family: "CevicheOne";
+  src: url(../font/CevicheOne-Regular.ttf)
+    	format("truetype");
+}
+
+
+
+@font-face {
+  font-family: "MinionPro_It";
+  src: url(../font/MinionPro-It.otf)
+    	format("truetype");
+}
+
+
+@font-face {
+  font-family: "NEXON.lv1_R";
+  src: url(../font/NEXONLv1GothicRegular.ttf)
+    	format("truetype");
+}
+@font-face {
+  font-family: "NEXON.lv1_B";
+  src: url(../font/NEXONLv1GothicBold.ttf)
+    	format("truetype");
+}
+
+
+@font-face {
+  font-family: "NEXON.lv2_R";
+  src: url(../font/NEXON\ Lv2\ Gothic.ttf)
+    	format("truetype");
+}
+@font-face {
+  font-family: "NEXON.lv2_B";
+  src: url(../font/NEXON\ Lv2\ Gothic\ Bold.ttf)
+    	format("truetype");
+}

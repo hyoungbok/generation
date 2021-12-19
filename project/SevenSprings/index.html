@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<meta name="Generator" content="Notepad++"/>
+<meta name="Author" content="이형복"/>
+<meta name="keywords" content="Seven Spring" />
+<meta name="Description" content="Seven Spring 메인 페이지에 오신 것을 환영합니다"/>
+<link rel="shortcut icon" href="favicon/favicon.ico"> <!-- 파비콘 -->
+<link rel="apple-touch-icon-precomposed" href="apple-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-icon-114x114.png">
+<title>Seven Spring</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+<script src="js/jquery-1.10.2.min.js"></script> <!-- 제이쿼리 라이이브러리 연동 -->
+<script src="js/jquery.easing.1.3.min.js"></script> 
+<script src="js/swipe.js"></script> <!-- 터치 슬라이드 플러그인 연동 -->
+<script src="js/jquery.bxslider.min.js"></script>  <!-- bxSlider 플러그인 연동 -->
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script> <!-- UI 플러그인 연동 -->
+<script src="js/jquery.cookie.js"></script>  <!-- 쿠키 플러그인 연동 -->
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<script src="js/DB_springMove_fn.js"></script>	
+
+<!--<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="js/map.js"></script>-->
+<!--    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMlWRxZdb2pQFqMkZe2Id_aN2gO-4MVoA&callback=initMap">
+  </script>
+<script src="js/map.js"></script> -->
+<style>
+	#map-canvas{width: 450px; height: 222px; margin-top: 1px; background-color: #ffffff; border: 1px solid #e0e0e0;}
+</style>
+</head>
+
+
+<body>
+	<div id="wrap">
+		<div id="top_event">
+			<div class="event" onclick="location.href='main/main.html'" title="Main Page">
+			</div>
+			<div class="close_btn"></div>
+		</div>
+		
+		<div id="header">
+			<div class="head_info">
+				<img src="images/best_bg13.jpg" class="fl" alt="main" onclick="location.href='main/main.html'" title="메인페이지 이동"/>
+				<p class="txt fl"> 건강한 외식문화를 지향하는 친환경</p>
+				<p class="txt fl"> 컨셉의 샐러드 그릴 레스토랑 입니다.</p>
+				<p class="txt2 fl"><span>세븐스프링</span>을 소개합니다!</p>
+			</div>
+			<h1><a href="index.html"><img src="images/seven_sprins_logo.jpg"  alt="세븐 스프링" /></a></h1>
+			<dl id="util_menu">
+				<dt class="hide">유틸메뉴</dt>
+				<dd class="clickme fl DB_etc10_1" style="width:128px"><img src="img/login_click.png" alt=""/></dd>
+				<dd class="util_first">
+					<ul>
+						<li class="login_wrap logtxt"><a href="#">로그인</a>
+							<form action="#" id="login_f" method="post" name="log_f">
+								<fieldset>
+									<legend>로그인</legend>
+									<p class="user_id">
+										<label for="user_id"><img src="img/login_title_id.gif" alt="아이디" /></label>
+										<input type="text" name="user_id" id="user_id" />
+									</p>
+									<p class="user_pw">
+										<label for="user_pw"><img src="img/login_title_pw.gif" alt="패스워드" /></label>
+										<input type="text" name="user_pw" id="user_pw" />
+									</p>
+									<p>
+										<input type="checkbox" name="save_id" id="save_id" />
+										<label for="save_id">비밀번호 저장</label>
+									</p>
+									<p class="log_btn">
+										<input type="image" src="img/login_btn.png" alt="login" />
+									</p>
+									<p class="join_btn_wrap">
+										<a href="#">회원가입</a>
+										<a href="#" class="sch_id_btn">아이디/비밀번호찾기</a>
+									</p>
+									<p class="login_close_btn"><a href="#"><img src="img/login_close_btn.png" alt="닫기버튼" /></a></p>
+								</fieldset>
+							</form>
+						</li>
+						<li class="logtxt"><a href="#">|&nbsp;&nbsp;&nbsp;회원가입</a></li>
+					</ul>
+				</dd>
+				<dd>
+					<ul id="zoom">
+						<li><img src="img/util_zoom_1.gif" alt="화면크기" /></li>
+						<li><a href="#" class="zoom_in"><img src="img/util_zoom_2.gif" alt="확대"/></a></li>
+						<li><a href="#" class="zoom_return"><img src="img/util_zoom_3.gif" alt="100%"/></a></li>
+						<li><a href="#" class="zoom_out"><img src="img/util_zoom_4.gif" alt="축소"/></a></li>
+					</ul>
+				</dd>
+				<dd><a href="#" class="print_btn"><img src="img/util_print.gif" alt="인쇄" /></a></dd>
+			</dl>
+			<form action="#" method="get" name="sch_f" id="sch_f">
+				<fieldset>
+					<legend>검색폼</legend>
+					<p>
+						<input type="text" name="keyword" id="keyword" title="검색어입력" />
+						<input type="image" src="img/search_button.png" class="sch_btn" alt="검색" />
+					</p>
+				</fieldset>
+			</form>
+			<h2 class="hide">메인메뉴</h2>
+			<div id="gnb_wrap">
+				<ul id="gnb">
+					<li class="fir"><a href="#">BRAND</a>
+						<ul class="sub1">
+							<li><a href="#">BRAND STORY</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MENU</a>
+						<ul class="sub2">
+							<li><a href="#">세븐스프링스</a></li>
+							<li><a href="#">세븐스프링스 블랙</a></li>
+							<li><a href="#">카페 세븐스프링스</a></li>
+							<li><a href="#">카페 파크7</a></li>
+						</ul>
+					</li>
+					<li class="border-right"><a href="#">STORE</a>
+						<ul class="sub3">
+							<li><a href="#">매장정보</a></li>
+						</ul>
+					</li>
+					<li class="blank" onclick="location.href='main/main.html'" ></li>
+					<li><a href="#">BENEFIT</a>
+						<ul class="sub6">
+							<li><a href="#">MEMBERSHIP 혜택</a></li>
+							<li><a href="#">제휴 할인&amp;상품권</a></li>
+						</ul>
+					</li>
+					<li><a href="#">EVENT&amp;STORY</a>
+						<ul class="sub7">
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">EVENT</a></li>
+							<li><a href="#">SCLAL LIVE</a></li>
+						</ul>
+					</li>
+					<li><a href="#">SUPPORT</a>
+						<ul class="sub8">
+							<li><a href="#">SPECIAL PARTY</a></li>
+							<li><a href="#">Q&amp;A</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<p id="total_btn">
+				<a href="#"><img src="img/btn_all_menu.png" alt="전체 메뉴" /></a>
+			</p>
+			<div id="total_menu">
+				<dl>
+					<dt>BRAND</dt>
+					<dd>
+						<ul>
+							<li><a href="#">세븐스프링스</a></li>
+							<li><a href="#">세븐스프링스 블랙</a></li>
+							<li><a href="#">카페 세븐스프링스</a></li>
+							<li><a href="#">카페 파크7</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>MENU</dt>
+					<dd>
+						<ul>
+							<li><a href="#">세븐스프링스</a></li>
+							<li><a href="#">세븐스프링스 블랙</a></li>
+							<li><a href="#">카페 세븐스프링스</a></li>
+							<li><a href="#">카페 파크7</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>STORE</dt>
+					<dd>
+						<ul>
+						    <li><a href="#">매장정보</a></li>
+						</ul>
+					</dd>
+				</dl>				
+				<dl>
+					<dt>seven spring</dt>
+					<dd class="blank">
+						<ul>
+							<li><a href="#"></a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>BENEFIT</dt>
+					<dd>
+						<ul>
+							<li><a href="#">MEMBERSHIP 혜택</a></li>
+							<li><a href="#">제휴 할인&amp;상품권</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>EVENT&amp;STORY</dt>
+					<dd>
+						<ul>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">EVENT</a></li>
+							<li><a href="#">SCLAL LIVE</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>SUPPORT</dt>
+					<dd>
+						<ul>
+							<li><a href="#">SPECIAL PARTY</a></li>
+							<li><a href="#">Q&amp;A</a></li>
+						</ul>
+					</dd>
+				</dl><!-- 총8개 -->
+				<p id="total_close"><a href="#"><img src="img/allmenu_close_btn.png" alt="전체메뉴 닫기" /></a></p>
+			</div>
+			<p id="date_wrap">
+				<span class="year">0000</span> 년
+				<span class="month">00</span> 월
+				<span class="date">00</span> 일
+			</p>
+		</div><!-- id="header" -->
+		<hr />
+		
+		<div id="visual">
+			<div id="mySwipe" class="swipe">
+				<ul class="touch_banner swipe-wrap">
+					<li><a href="#"><img src="images/main1_2.png" alt="슬라이드01" /></a></li>
+					<li><a href="#"><img src="images/main1_3.png" alt="슬라이드02" /></a></li>
+					<li><a href="#"><img src="images/main1_4.png" alt="슬라이드03" /></a></li>
+				</ul>
+			</div>
+			<ul class="touch_bullet">
+				<li><img src="img/visual_bullet_on.png" class="active" alt="" /></li>
+				<li><img src="img/visual_bullet_off.png" alt=""/></li>
+				<li><img src="img/visual_bullet_off.png" alt="" /></li>
+			</ul>
+			<p class="touch_left_btn">
+				<a href="#"><img src="img/slide_left_button.png" alt="이전 배너" /></a>
+			</p>
+			<p class="touch_right_btn">
+				<a href="#"><img src="img/slide_right_button.png" alt="다음 배너" /></a>
+			</p>
+		</div><!-- id="visual" -->
+		<hr />
+		<div id="contents1">
+            <div id="m_contents">
+                <div id="main_goods">
+                    <h2>BRAND STORY</h2>
+                    <h3>세븐스프링스는 건강한 외식 문화를 만들어 갑니다.</h3>
+                    <a href="#">
+                        <div class="goods_box box1">
+                            <div class="goods_img01"><img src="images/bg_seven.png" alt="" /></div>
+                            <div class="goods_info">
+                                <p class="strong">SALAD·GRILL<br/>RICE·NOODLE·DESSERT</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="goods_box box2">
+                            <div class="goods_img02"><img src="images/bg_cafe.png" alt="" /></div>
+                            <div class="goods_info">
+                                <p class="strong">PIZZA·PASTA<br/>SALAD·RICE·JUICE</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="goods_box box3">
+                            <div class="goods_img03"><img src="images/bg_black.png" alt="" /></div>
+                            <div class="goods_info">
+                                <p class="strong">BBQ·SUSHI<br/>SALAD·PIZZA·PASTA</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div><!-- id="main_goods" -->
+            </div><!-- <div id="m_contents"> -->
+            <div class="box1_img">
+                <img class="g_right" src="images/brand_obj01_right.jpg" alt=""/>
+                <img class="g_left" src="images/brand_obj01_left.jpg" alt=""/>
+            </div>
+            <div class="box2_img">
+                <img class="g_right" src="images/brand_obj02_right.jpg" alt=""/>
+                <img class="g_left" src="images/brand_obj02_left.jpg" alt=""/>
+            </div>
+            <div class="box3_img">
+                <img class="g_right" src="images/brand_obj03_right.jpg" alt=""/>
+                <img class="g_left" src="images/brand_obj03_left.jpg" alt=""/>
+            </div>
+        </div> <!-- <div id="contents1"> -->
+        <div id="contents2_100"></div>
+        <div id="contents2">      
+			<div id="contents_top">
+				<div id="roll_banner_wrap">
+					<h3>메뉴소개</h3>
+					<dl>
+						<dt class="roll_btn1"><a href="#" class="active"><img src="img/pop_btn_1_over.png" alt="버튼1" /></a></dt>
+						<dd><a href="#"><img src="images/day_salad.png" alt="배너1" />
+						<p class="title">DIY Salad</p>
+						<p>양상추｜적양배추｜통로메인｜케일｜치커리</p>
+						<p>샐러리｜브로콜리｜컬리플라워｜믹스올리브</p>
+						<p>[드레싱] 발사믹｜흑임자｜요거트｜딸기</p></a></dd>
+						<dt class="roll_btn2"><a href="#"><img src="img/pop_btn_2_out.png" alt="버튼2" /></a></dt>
+						<dd><a href="#"><img src="images/mix_salad.png" alt="배너2" />
+						<p class="title">MIX Salad</p>
+						<p>시그니쳐 연어 샐러드｜시그니쳐 치킨 시저 샐러드</p>
+						<p>참깨 연두부 샐러드｜단호박 크림 샐러드</p>
+						<p>망고시트러스 샐러드｜사과 월도프 샐러드</p>
+						<p>비트 카프레제 샐러드 | 문어 카르파치오 샐러드</p>
+						<p>스트로베리 그린 샐러드｜스트로베리 바질 브루스케타</p>
+						</a></dd>
+						
+						<dt class="roll_btn3"><a href="#"><img src="img/pop_btn_3_out.png" alt="버튼3" /></a></dt>
+						<dd><a href="#"><img src="images/pizza.png" alt="배너3" />
+						<p class="title">Pizza &amp; Pasta</p>
+						<p>크리미 머쉬룸 파스타｜비프 라구 파스타</p>
+						<p>하와이안 치킨 피자｜그레이프 피자</p></a></dd>
+						<dt class="roll_btn4"><a href="#"><img src="img/pop_btn_4_out.png" alt="버튼4" /></a></dt>
+						<dd><a href="#"><img src="images/main_steak.png" alt="배너4"/>
+						<p class="title">Main Steak</p>
+						<p>[원주점]</p>
+						<p>안심스테이크｜등심스테이크｜오리지널 BBQ폭립</p>
+						<p>[창원점]</p>
+						<p>안심스테이크｜등심스테이크｜연어스테이크</p>
+						</a></dd>
+						<dt class="roll_btn5"><a href="#"><img src="img/pop_btn_5_out.png" alt="버튼5" /></a></dt>
+						<dd><a href="#"><img src="images/rice_noodle.png" alt="배너5" />
+						<p class="title">Rice &amp; Noodle</p>
+						<p>곤드레나물 비빔밥</p>
+						<p>얼큰 홍짬뽕</p>
+						<p>나가사키 백짬뽕</p>
+						<p>불고기 볶음밥</p>
+						</a></dd>
+						<dt class="roll_btn6"><a href="#"><img src="img/pop_btn_6_out.png" alt="버튼6" /></a></dt>
+						<dd><a href="#"><img src="images/hot_food.png" alt="배너6" />
+						<p class="title">Hot Food</p>
+						<p>비프 부르기뇽｜칠리 갈릭 쉬림프</p>
+						<p>화이트 크림 치킨｜리코타치즈 프리타타</p>
+						<p>석화찜｜토마토 홍합찜｜바베큐 폭립</p>
+						<p>스윗포테이토｜DIY타코｜그릴드 베지</p>
+						</a></dd>
+						<dt class="roll_btn7"><a href="#"><img src="img/pop_btn_7_out.png" alt="버튼7" /></a></dt>
+						<dd><a href="#"><img src="images/dessert.png" alt="배너7" />
+						<p class="title">Dessert</p>
+						<p>리스케이크｜블랙 포레스트 케이크</p>
+						<p>샹그리아｜망고 오렌지 주스｜사과 당근 주스</p>
+						<p>DIY요거트&와플｜계절과일｜아이스크림</p>
+						</a></dd>
+					</dl><!-- 총 7개 -->
+					<p class="ctl_btn">
+						<a href="#" class="playBtn"><img src="img/pop_btn_play_on.gif" alt="재생 버튼" /></a>
+						<a href="#" class="stopBtn"><img src="img/pop_btn_stop_off.gif" alt="정지 버튼" /></a>
+					</p>
+				</div><!-- id="roll_banner_wrap" -->
+				<!-- 탭 메뉴를 이용해 최근 게시물 리스트 만들기 -->
+				
+				<div id="event_wrap" class="fl">
+				    <h3>NEWS</h3>
+					<p>세븐스프링스의 새로운 소식을 받아보세요.</p>
+					<div id="brandVisual">
+						<ul>
+							<li class="visual_0"><a href="#">베너이미지1</a></li>
+							<li class="visual_1"><a href="#">베너이미지2</a></li>
+							<li class="visual_2"><a href="#">베너이미지3</a></li>
+							<li class="visual_3"><a href="#">베너이미지4</a></li>
+							<li class="visual_4"><a href="#">베너이미지5</a></li>
+							<li class="visual_5"><a href="#">베너이미지6</a></li>
+						</ul>
+					</div>
+					<div id="buttonList">
+                        <ul>
+                            <li class="on"><a href="#">배너1</a></li>
+                            <li><a href="#">배너2</a></li>
+                            <li><a href="#">배너3</a></li>
+                            <li><a href="#">배너4</a></li>
+                            <li><a href="#">배너5</a></li>
+                            <li><a href="#">배너6</a></li>
+                        </ul>
+					</div>
+				</div><!-- id="event_wrap" -->
+			</div><!-- id="contents_top" -->
+            
+        </div>
+			<!-- 레시피 상품 슬라이드 만들기 -->
+        <div id="contents3">   
+			<div id="recipe">
+				<h3>매장정보</h3>
+				<a href="#" class="r_more">서울 매장 정보</a>
+				<div class="animation_canvas">
+					<div class="slider_panel">
+						<a href="#" class="slider_image"><img src="images/store01.png"  alt="" /><p class="loc">세븐스프링스 타임스퀘어점</p>
+						<p class="ps">평일 런치 : 11:00 ~16:00 <br/>평일 디너 : 17:00 ~ 22:00 (Break Time : 16:00~17:00)<br/>주말/공휴일 : 11:00 ~ 22:00 (Break Time 없음) </p>
+						</a>
+						<a href="#" class="slider_image"><img src="images/store02.png" alt="" />
+						<p class="loc">세븐스프링스 목동41타워점</p>
+						<p class="ps">평일 런치 : 11:30 ~15:30 <br/>평일 디너 : 17:30 ~ 22:00 (Break Time : 15:30~17:30)<br/>주말/공휴일 : 11:30 ~ 22:00 (Break Time 없음) </p>
+						</a>
+						<a href="#" class="slider_image"><img src="images/store03.png"  alt="" />
+						<p class="loc">세븐스프링스 잠실 롯데월드점</p>
+						<p class="ps">평일 런치 : 11:00 ~15:30 <br/>평일 디너 : 17:00 ~ 22:00 (Break Time : 15:30~17:00)<br/>주말/공휴일 : 11:00 ~ 22:00 (Break Time 없음) </p>
+						</a>
+						<a href="#" class="slider_image"><img src="images/store04.png"  alt="" />
+						<p class="loc">세븐스프링스 잠원점</p>
+						<p class="ps">평일 런치 : 11:30 ~15:30 <br/>평일 디너 : 17:30 ~ 22:00 (Break Time : 15:30~17:30)<br/>주말/공휴일 : 11:30 ~ 22:00 (Break Time 없음) </p>
+						</a> 
+						<a href="#" class="slider_image"><img src="images/store05.png" alt="" />
+						<p class="loc">세븐스프링스 광화문점</p>
+						<p class="ps">평일 런치 : 11:00 ~16:00 <br/>평일 디너 : 17:00 ~ 22:00 (Break Time : 16:00~17:00)<br/>주말/공휴일 : 11:30 ~ 22:00 (Break Time 없음) </p>
+						</a>
+					</div>
+					<div class="control_panel">
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+						<div class="control_button"></div>
+					</div>
+				</div><!-- class="animation_canvas" -->
+				<div class="slider_text_panel">
+					<div class="slider_text">
+						<div class="slider_service">
+                            <div>매장서비스</div>
+						    <ul class="service">
+                                <li><span class="btn_ico parking"></span>주차</li>
+                                <li><span class="btn_ico milk"></span>수유실</li>
+                                <li><span class="btn_ico solo"></span>단독연회</li>
+                                <li><span class="btn_ico wifi"></span>와이파이</li>
+                            </ul>
+						</div>
+						<div class="slider_charge"> 
+						    <ul class="left">
+                                <li class="bold">성인(중학생 이상)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 18,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 28,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 28,800</li>
+                            </ul>							
+                            <ul class="right">
+                                <li class="bold">초등학생 (중학교 입학 전)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 13,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>			
+                            </ul>
+                            <ul class="bottom">
+                                <li>* 오후 5시 이후 퇴점 시 디너 요금 부과</li>
+                            </ul>
+						</div>
+					</div>
+					<div class="slider_text">
+						<div class="slider_service">
+                            <div>매장서비스</div>
+						    <ul class="service">
+                                <li><span class="btn_ico baby"></span>돌잔치</li>
+                                <li><span class="btn_ico parking"></span>주차</li>
+                                <li><span class="btn_ico milk"></span>수유실</li>
+                                <li><span class="btn_ico solo"></span>단독연회</li>
+                                <li><span class="btn_ico wedding"></span>웨딩</li>
+                                <li><span class="btn_ico wifi"></span>와이파이</li>
+                            </ul>
+						</div>
+						<div class="slider_charge">
+						    <ul class="left">
+                                <li class="bold">성인(중학생 이상)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 22,900</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 32,900</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 35,900</li>
+                            </ul>							
+                            <ul class="right">
+                                <li class="bold">초등학생 (중학교 입학 전)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 13,900</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 17,900</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 17,900</li>			
+                            </ul>
+                            <ul class="bottom">
+                                <li>* 오후 5시 이후 퇴점 시 디너 요금 부과</li>
+                            </ul>
+						</div>
+					</div>
+					<div class="slider_text">
+						<div class="slider_service">
+                            <div>매장서비스</div>
+						    <ul class="service">
+                                <li><span class="btn_ico solo"></span>단독연회</li>
+                                <li><span class="btn_ico wifi"></span>와이파이</li>
+                            </ul>
+						</div>
+						<div class="slider_charge">
+						    <ul class="left">
+                                <li class="bold">성인(중학생 이상)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 19,900</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 21,900</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 25,900</li>	
+                            </ul>							
+                            <ul class="right">
+                                <li class="bold">초등학생 (중학교 입학 전)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 13,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 15,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>			
+                            </ul>
+                            <ul class="bottom">
+                                <li>* 오후 5시 이후 퇴점 시 디너 요금 부과</li>
+                            </ul>
+						</div>
+					</div>
+					<div class="slider_text">
+						<div class="slider_service">
+                            <div>매장서비스</div>
+						    <ul class="service">
+                                <li><span class="btn_ico baby"></span>돌잔치</li>
+                                <li><span class="btn_ico parking"></span>주차</li>
+                                <li><span class="btn_ico play"></span>키즈존</li>
+                                <li><span class="btn_ico solo"></span>단독연회</li>
+                                <li><span class="btn_ico wedding"></span>웨딩</li>
+                                <li><span class="btn_ico wifi"></span>와이파이</li>
+                            </ul>
+						</div>
+						<div class="slider_charge">
+						    <ul class="left">
+                                <li class="bold">성인(중학생 이상)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 18,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 29,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 29,800</li>
+                            </ul>							
+                            <ul class="right">
+                                <li class="bold">초등학생 (중학교 입학 전)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 13,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>			
+                            </ul>
+                            <ul class="bottom">
+                                <li>* 오후 5시 이후 퇴점 시 디너 요금 부과</li>
+                            </ul>
+						</div>
+					</div>
+					<div class="slider_text">
+						<div class="slider_service">
+                            <div>매장서비스</div>
+						    <ul class="service">
+                                <li><span class="btn_ico baby"></span>돌잔치</li>
+                                <li><span class="btn_ico parking"></span>주차</li>
+                                <li><span class="btn_ico solo"></span>단독연회</li>
+                                <li><span class="btn_ico air"></span>공기청정기</li>
+                                <li><span class="btn_ico wifi"></span>와이파이</li>
+                            </ul>
+						</div>
+						<div class="slider_charge">
+						    <ul class="left">
+                                <li class="bold">성인(중학생 이상)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 18,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 29,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 29,800</li>
+                            </ul>							
+                            <ul class="right">
+                                <li class="bold">초등학생 (중학교 입학 전)</li>
+                                <li class="le">평일 LUNCH</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 13,800</li>
+                                <li class="le">평일 DINNER</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>
+                                <li class="le">주말 / 공휴일</li>
+                                <li class="ri">····&nbsp;&nbsp;￦ 16,800</li>			
+                            </ul>
+                            <ul class="bottom">
+                                <li>* 오후 5시 이후 퇴점 시 디너 요금 부과</li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+			</div><!-- id="recipe" -->
+        </div>
+			<!-- 자동슬라이드 배너를 이용한 베스트 상품 영역 만들기 -->
+         <div id="contents4"> 
+            <div id="bestgoods">   
+                <div id="bestgoods_zone">
+                    <h3>SOCIAL LIVE</h3>
+                    <p>SNS를 통해 세븐스프링스의 다양한 이야기를 만나보세요.</p>
+                    <div id="best_bg">
+                        <ul>
+                            <li><a href="#"><img src="images/best_bg01.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg02.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg03.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg04.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg05.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg06.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg07.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg08.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg09.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg10.png" alt="" /></a></li>
+                            <li><a href="#"><img src="images/best_bg11.png" alt="" /></a></li>
+                        </ul><!-- 총 11개 -->
+                        <p class="prev_btn"><a href="#"><img src="img/slide-sub-left-button-black.png" alt="이전으로 이동" /></a></p>
+                        <p class="next_btn"><a href="#"><img src="img/slide-sub-right-button-black.png" alt="다음으로 이동" /></a></p>
+                    </div>
+                </div><!-- id="bestgoods_zone" -->
+
+               
+
+
+
+                <p id="pop_wrap">
+                    <img src="images/popup.jpg" alt="컬리를 가장 쉽고 편하게 이용하는 방법" usemap="#pop" />
+                    <map name="pop" id="pop">
+                        <area shape="rect" coords="265,557,435,572" href="창닫기" alt="">
+                        <area shape="rect" coords="219,557,342,572" href="하루동안창닫기" alt="">
+                    </map>
+                </p>
+            </div>
+         </div><!-- id="contents4" -->
+	</div><!-- id="wrap" -->
+	<hr />
+	
+	<div id="footer_wrap">
+		<div class="wrap">
+            <ul class="footer_menu">
+                <li>
+                    BRAND
+                    <ul class="depth2">
+                        <li><a href="/Brand/Seven">BRAND STORY</a></li>
+                    </ul>
+                </li>
+                <li>
+                    MENU
+                    <ul class="depth2">
+                        <li><a href="/Menu/Seven_Menu">세븐스프링스</a></li>
+                        <li><a href="/Menu/Black_Menu">세븐스프링스 블랙</a></li>
+                        <li><a href="/Menu/Cafe_Menu">카페 세븐스프링스</a></li>
+                        <li><a href="/Menu/Park_Menu">카페 파크7</a></li>
+                    </ul>
+                </li>
+                <li>
+                    STORE
+                    <ul class="depth2">
+                        <li><a href="/Store/Store">매장정보</a></li>
+                    </ul>
+                </li>
+                <li>
+                    BENEFIT
+                    <ul class="depth2">
+                        <li><a href="/Benefit/Membership">MEMBERSHIP 혜택</a></li>
+                        <li><a href="/Benefit/Discount">제휴 할인 &amp; 상품권</a></li>
+                    </ul>
+                </li>
+                <li>
+                    EVENT&amp;STORY
+                    <ul class="depth2">
+                        <li><a href="/Event/News">NEWS</a></li>
+                        <li><a href="/Event/Event">EVENT</a></li>
+                        <li><a href="/Event/Event">SOCIAL LIVE</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    SUPPORT
+                    <ul class="depth2">
+                        <li><a href="/Support/Party">SPECIAL PARTY</a></li>
+                        <li><a href="/Support/Qna">Q&amp;A</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+		
+    <div id="inner_footer">
+        <div class="inner">
+            <ul class="in_top  cf">
+				<li>채용안내</li>
+				<li>공고</li>
+				<li><strong>개인정보 처리방침</strong></li>
+				<li class="last">이용약관</li>
+			</ul>
+			<ul class="in_sec cf">
+				<li>주소 : 서울특별시 종로구 북촌로 18 4층</li>
+				<li>대표이사 : 서정배</li>
+				<li>상호명 : (주)삼양에프앤비</li>
+				<li>사업자등록번호 : 105-86-32252</li>
+				<li class="last">사업자등록번호 : 105-86-32252</li>
+			</ul>				
+			<ul class="in_thr cf">
+				<li>TEL : 1670-5270</li>
+				<li>FAX : 02-425-4086 </li>
+				<li class="last">제휴문의 : 02-6380-2560 </li>
+			</ul>
+			<ul class="in_last">
+				<li>COPYRIGHT 2018 BY SEVENSPRINGS ALL RIGHTS RESERVED</li>
+			</ul>
+			<ul class="f_sns cf">
+				<li class="icon tt"><a href="https://pf.kakao.com/_ixfxntE" target="_blank" title="새창열기"><span class="btn_ico kakao">kakao</span></a></li>
+				<li class="icon ii"> <a href="https://www.instagram.com/sevensprings_official/" target="_blank" title="새창열기"><span class="btn_ico instar">instar</span></a></li>
+                <li class="icon ff"> <a href="https://www.facebook.com/7springs" target="_blank" title="새창열기"><span class="btn_ico facebook">facebook</span></a> </li>
+				<li class="s_tit">고객과 함께하는 세븐스프링스</li>
+			</ul>
+        </div>
+    </div>
+
+
+
+
+	
+
+
+
+<script> 
+$('.DB_etc10_1').DB_springMove({
+	key:'e24102',          //라이센스키
+	dir:'x',               //방향축('x','y')
+	mirror:0.5,              //반대방향이동(1,-1)
+	radius:10,             //반경
+	motionSpeed:0.1        //속도(0~1)
+})
+</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+

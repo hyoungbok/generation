@@ -1,0 +1,15 @@
+﻿/* Reset CSS */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+* { margin:0; padding:0; border:0; outline:0; vertical-align:top;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+ul, ol, dl { list-style:none; }
+img, video { max-width:100%; border:0; vertical-align:top; }
+a { vertical-align:top; text-decoration:none; color:#000000; }
+table { border-collapse:collapse; border-spacing:0; }
+input, select { vertical-align:middle; }
+body { background: #323532; font-family: 'Nanum Gothic', '돋움', sans-serif;
+font-size:100%; line-height:1; color: #333333; background-image: url(../img/body_bg.jpg);background-repeat: repeat;}
+label { cursor:pointer; }
+.blind,legend,hr,caption { display:block; overflow:hidden;
+position:absolute; top:0; left:-1000em; }
+i,em,address { font-style:normal; font-weight:normal; }

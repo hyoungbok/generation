@@ -1,0 +1,9 @@
+*{margin: 0; padding: 0; }
+body {overflow-x :hidden}
+
+#main{position: relative; width: 1600px; margin: 0 auto; overflow: hidden; }
+.mainImg{height: 900px; overflow: hidden;}
+.mainImg img{ position: relative; width: 1600px; }
+.mainText {position: absolute; top: -200px; left: -100px; opacity: 0; }
+.menu {position: absolute; top: 40px; right: 150px;}
+.menu a{display: block; text-decoration: none; color: #266736; border: 3px solid #266736; font-size: 1.5rem; font-weight: bold; padding: 4px 10px; border-radius: 20px;}

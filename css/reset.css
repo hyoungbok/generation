@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+body {
+	overflow-x: hidden;
+}
+ul, ol, dl {
+  list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	vertical-align: top;
+	text-decoration: none;
+	color: #000000;
+}
+i, em, address {
+	font-style: normal;
+	font-weight: normal;
+}

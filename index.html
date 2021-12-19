@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/base.css">
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/DB_springMove_fn.js"></script>
+	<!--마우스이미지 둥실둥실-->
+	<script src="js/jquery.Floater.js"></script>
+	<!--사이드 메뉴탭-->
+	<script src="js/jquery.ba-throttle-debounce.js"></script> <!-- 그래프 -->
+	<script src="js/typed.js"></script>
+	<script src="js/script.js"></script>
+	<title>형복이 포트폴리오</title>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div id="header_wrap">
+				<div id="logo">
+					<h1><a href="#"><span class="skip">LOGO</span></a></h1>
+				</div>
+				<div id="mo_btn">
+					<button type="button">
+						<span class="line01"></span>
+						<span class="line02"></span>
+						<span class="line03"></span>
+					</button>
+				</div>
+				<div id="menu">
+					<ul>
+						<li><a href="#" class="on">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> 	<!-- header end  -->
+		<div id="container">
+			<div id="banner">
+				<div id="banner_wrap">
+					<div class="banner_text">
+						<p class="text01">Welcom to My Portfolio</p>
+						<p class="text02">HOME PAGE</p>
+						<p class="text03">
+							가만히 있으면 아무일도 일어나지만<br>
+							용기를 내며 미래의 나를 꿈꾸다!
+						</p>
+					</div>
+					<div class="banner_img"></div>
+					<div class="banner_box"></div>
+				</div>
+				<div class="scroll">
+					<span class="scroll_img"><img src="img/scroll01.png" alt=""></span>
+				</div>
+			</div>	<!-- banner end  -->
+			<div id="about">
+				<div id="about_wrap">
+					<h2>ABOUT</h2>
+					<div class="content_text">
+						<p>프로필, 경력사항, 자기소개 입니다.</p>
+					</div>
+					<div class="about_box">
+						<div class="about_img">
+							<img src="img/hyoung.png" alt="이미지" width="250">
+						</div>
+						<div class="about_menu">
+							<div class="about_tap">
+								<ul>
+									<li><a href="#" class="on">PROFILE</a></li>
+									<li><a href="#">HISTORY</a></li>
+									<li><a href="#">ABOUT ME</a></li>
+								</ul>
+							</div>
+							<div class="about_panel">
+								<div id="panel01" style="top: 0;">
+									<ul>
+										<li><span class="checkR">&#x2713;</span>이형복 (Lee Hyoung_Bok)</li>
+										<li><span class="checkR">&#x2713;</span>1985. 05. 06</li>
+										<li><span class="checkR">&#x2713;</span>코리아IT아카데미(프론트엔드 개발자과정) 수료</li>
+										<li><span class="checkR">&#x2713;</span>SBS컴퓨터아트학원(웹퍼블리셔) 수료</li>
+										<li><span class="checkR">&#x2713;</span>더조은컴퓨터학원(웹퍼블리셔) 수료</li>
+										<li><span class="checkR">&#x2713;</span>종로 솔데스트IT학원(JAVA,JSP, ORACLE, Eclipse,
+											Javascript, Css)<br>
+											활용한 자바 보안 코딩 빅데이터 개발자 양성과정 수료
+										</li>
+										<li><span class="checkR">&#x2713;</span>대전 혜천전문대학 쥬얼리디자인과 졸업</li>
+									</ul>
+								</div>
+								<div id="panel02">
+									<ul>
+										<li>
+											<p class="bold">2019. 06 ~ 2021. 08</p>
+											<p>강자매 쇼핑몰 웹디자인(카페24, 포토샵, 상세페이지 작업, 팝업)</p>
+										</li>
+										<li>
+											<p class="bold">2019. 03 ~ 2019.05</p>
+											<p>아르바이트 계약직(프론트앤드(Html, Css, Script)수정 보조</p>
+										</li>
+										<li>
+											<p class="bold">2017. 03 ~ 2018. 01</p>
+											<p>GMT (쥬얼리 - 3D프린터 납품&sdot;교육&sdot;유지보수)</p>
+										</li>
+										<li>
+											<p class="bold">2016. 01 ~ 2017. 03</p>
+											<p>JND (쥬얼리 - 제품 상품 입&sdot;출고)</p>
+										</li>
+										<li>
+											<p class="bold">2014. 01 ~ 2016. 01</p>
+											<p>에뿌쥬얼리 (쥬얼리 - 제품 상품 입&sdot;출고)</p>
+										</li>
+										<li>
+											<p class="bold">2010. 01 ~ 2013. 12</p>
+											<p>주호 (쥬얼리 - 다이아몬드 매입&sdot;판매&sdot;감정대행)</p>
+										</li>
+									</ul>
+								</div>
+								<div id="panel03">
+									<div class="about_me_text">
+										<p class="bold">#Strengths</p>
+										<p>
+											꼼꼼하면서도 세심하며 무언가를 시작하면 중간에 포기하는 것보다 마무리를 지으려고 하니
+											점점 주위 사람들한테 신뢰와 믿음을 얹게 되었습니다.
+										</p>
+										<p class="bold">#Weaknesses</p>
+										<p>꼼꼼하게 하고자 하니 조금 느리다고 생각할 수 있는 점입니다.</p>
+										<p class="bold">#Opportunities</p>
+										<p>일에 능동적으로 임하여 회사나 제 자신을 발전할 수 있도록 항상 배우는 자세로 열심히 노력하겠습니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="fixd_bg">
+					<div class="fixd_text">
+						<div class="text01"><span>My Strengths</span></div>
+						<div class="text02">
+							<span>꼼꼼하면서 성실이 일을하며 맡은 일은 포기하지 않고 끝까지 마무리하는 성격입니다.</span>
+						</div>
+					</div>
+				</div>
+			</div>	<!-- about end  -->
+			<div id="skills">
+				<div id="skills_wrap">
+					<h2>SKILLS</h2>
+					<div class="skills_container">
+						<div class="skills_box">
+							<ul>
+								<li class="s_01 s_img"><img src="img/skill_html.jpg" alt="Html"></li>
+								<li class="s_02 s_img"><img src="img/skill_css.jpg" alt="Css"></li>
+								<li class="s_03 s_img"><img src="img/skill_jquery.jpg" alt="jQuery"></li>
+								<li class="s_04 s_img"><img src="img/skill_react.jpg" alt="React"></li>
+								<li class="s_05 s_img"><img src="img/skill_ps.jpg" alt="Ps"></li>
+								<li class="s_06 s_img"><img src="img/skill_ai.jpg" alt="Ai"></li>
+							</ul>
+						</div>
+						<div class="skills_graph">
+							<div class="skills_title">
+								<span>
+									현재활용 할 수 있는 능력입니다.<br>
+									누구보다 긍정적인 마인드를 가지고 항상 노력하겠습니다.
+								</span>
+							</div>
+							<div class="html_graph skill">
+								<span class="skill_name">Html</span>
+								<div class="graph_bg graph01">
+									<span class="graph_color graph_color01"></span>
+								</div>
+								<span class="skill_p"><span class="num">90</span>%</span>
+							</div>
+							<div class="css_graph skill">
+								<span class="skill_name">CSS</span>
+								<div class="graph_bg graph02">
+									<span class="graph_color graph_color02"></span>
+								</div>
+								<span class="skill_p"><span class="num">90</span>%</span>
+							</div>
+							<div class="jquery_graph skill">
+								<span class="skill_name">jQuery</span>
+								<div class="graph_bg graph03">
+									<span class="graph_color graph_color03"></span>
+								</div>
+								<span class="skill_p"><span class="num">80</span>%</span>
+							</div>
+							<div class="react_graph skill">
+								<span class="skill_name">React</span>
+								<div class="graph_bg graph04">
+									<span class="graph_color graph_color04"></span>
+								</div>
+								<span class="skill_p"><span class="num">80</span>%</span>
+							</div>
+							<div class="ps_graph skill">
+								<span class="skill_name">Photoshap</span>
+								<div class="graph_bg graph05">
+									<span class="graph_color graph_color05"></span>
+								</div>
+								<span class="skill_p"><span class="num">90</span>%</span>
+							</div>
+							<div class="ai_graph skill">
+								<span class="skill_name">Illustratior</span>
+								<div class="graph_bg graph06">
+									<span class="graph_color graph_color06"></span>
+								</div>
+								<span class="skill_p"><span class="num">65</span>%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	<!-- skills end  -->
+			<div id="portfolio">
+				<div id="portfolio_wrap">
+					<h2>PROTFOLIO</h2>
+					<div class="portfolio_title">
+						<span>
+							현재까지 작업한 내용입니다.
+						</span>
+					</div>
+					<div class="portfolio_tab">
+						<ul>
+							<li><a href="#" id="all" class="on">ALL</a></li>
+							<li><a href="#" id="react">React</a></li>
+							<li><a href="#" id="jquery">jQuery</a></li>
+							<li><a href="#" id="clone">Clone</a></li>
+						</ul>
+					</div>
+					<div class="portfolio_box">
+						<ul>
+							<li class="p_10 jquery">
+								<a href="project/game/index.html" target="_blank">
+									<img src="img/tetris.jpg" alt="tetris">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_09 react">
+								<a href="https://hi-todolist.netlify.app/" target="_blank">
+									<img src="img/todolist.png" alt="todolist">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_08 react">
+								<a href="https://job-mbti.netlify.app/" target="_blank">
+									<img src="img/job_mbti.png" alt="mbti">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_07 jquery">
+								<a href="project/lotto/index.html" target="_blank">
+									<img src="img/lotto.png" alt="lotto">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_06 clone">
+								<a href="project/Starbucks/index.html" target="_blank">
+									<img src="img/Starbucks.jpg" alt="starbucks">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_05 clone">
+								<a href="project/SevenSprings/main/main.html" target="_blank">
+									<img src="img/SevenSprings.jpg" alt=" seven_springs">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_04 clone">
+								<a href="project/MarketKurly/index.html" target="_blank">
+									<img src="img/MarketKurly.jpg" alt="market_kurly">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_03 clone">
+								<a href="project/Paris/index.html" target="_blank">
+									<img src="img/Paris.jpg" alt="paris_baguette">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_02 clone">
+								<a href="project/SejongCultural/index.html" target="_blank">
+									<img src="img/SejongCultural.jpg" alt="sejong_cultural">
+									<p>CLICK</p>
+								</a>
+							</li>
+							<li class="p_01 clone">
+								<a href="project/Jestina/index.html" target="_blank">
+									<img src="img/jestina.jpg" alt="jestina">
+									<p>CLICK</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>	<!-- portfolio end  -->
+			<div id="contact">
+				<div id="contact_wrap">
+					<h2>CONTACT</h2>
+					<div id="contact_bg">
+						<h3>Thank You!</h3>
+						<div class="top_icon">
+							<div class="contact_name phon">
+								<img src="img/icon1.png" alt="phon">
+								<p class="point">010-6455-7159</p>
+							</div>
+							<div class="contact_name email">
+								<img src="img/icon2.png" alt="email">
+								<p>gole850506@naver.com</p>
+							</div>
+						</div>
+						<div class="bottom_icon">
+							<div class="contact_name address">
+								<img src="img/icon4.png" alt="address">
+								<p>서울시 구로구 구도동</p>
+							</div>
+							<div class="contact_name profile">
+								<a href="hyoungbok.pdf" target="_blank">
+									<img src="img/icon5.png" alt="profile">
+									<p>이력서 열기</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	<!-- contact end  -->
+			<div id="float">
+				<div id="float_side">
+					<div class="float_text">
+						<span class="float_type"></span>
+					</div>
+					<ul>
+						<li class="active"><span id="btn01"></span></li>
+						<li><span id="btn02"></span></li>
+						<li><span id="btn03"></span></li>
+						<li><span id="btn04"></span></li>
+						<li><span id="btn05"></span></li>
+					</ul>
+				</div>
+			</div>	<!-- float end  -->
+		</div> 	<!-- container end  -->
+		<div id="footer">
+			<div class="footer_wrap">
+				<h4>제 홈페이지에 방문해 주셔서 감사합니다.</h4>
+				<p>COPYRIGHT &copy; 2021 -HyoungBok- All rights reserved</p>
+			</div>
+		</div> 	<!-- footer end  -->
+	</div> 		<!-- wrap end  -->
+</body>
+
+</html>
