@@ -472,7 +472,7 @@
 #portfolio_wrap .portfolio_box li {
   position: relative;
   width: 44%;
-  height: 40vmax;
+  height: 190px;
   margin: 10px 3% 20px;
   border-radius: 15px;
   box-shadow: 3px 3px 5px #838383;
@@ -761,7 +761,7 @@
     padding-top: 20px;
   }
   #portfolio_wrap .portfolio_box li {
-    height: 42vmin;
+    height: 230px;
   }
 }
 
@@ -995,7 +995,7 @@
 
   #portfolio_wrap .portfolio_box li {
     width: 29%;
-    height: 40vmin;
+    height: 230px;
     margin: 10px 15px 40px;
   }
 
@@ -1038,7 +1038,7 @@
     margin-top: 20px;
   }
   #portfolio_wrap .portfolio_box li {
-    height: 43vmin;
+    height: 250px;
   }
 
   #skills_wrap .skills_box li {
