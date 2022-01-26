@@ -468,11 +468,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+	padding: 0 20px;
 }
 #portfolio_wrap .portfolio_box li {
   position: relative;
-  width: 44%;
-  height: 190px;
+  height: auto;
   margin: 10px 3% 20px;
   border-radius: 15px;
   box-shadow: 3px 3px 5px #838383;
@@ -784,7 +784,7 @@
     padding-top: 20px;
   }
   #portfolio_wrap .portfolio_box li {
-    height: 230px;
+    height: auto;
   }
 }
 
@@ -1016,11 +1016,16 @@
     justify-content: normal;
   }
 
-  #portfolio_wrap .portfolio_box li {
-    width: 29%;
-    height: 230px;
-    margin: 10px 15px 40px;
-  }
+  
+	#portfolio_wrap .portfolio_box li {
+		position: relative;
+		width: 44%;
+		height: auto;
+		margin: 10px 3% 20px;
+		border-radius: 15px;
+		box-shadow: 3px 3px 5px #838383;
+		overflow: hidden;
+	}
 
   #contact_wrap {
     height: 650px;
@@ -1061,13 +1066,19 @@
     margin-top: 20px;
   }
   #portfolio_wrap .portfolio_box li {
-    height: 250px;
+    height: auto;
   }
 
   #skills_wrap .skills_box li {
     margin: 10px 20px;
     width: 90px;
     height: 110px;
+  }
+
+	#portfolio_wrap .portfolio_box li {
+    width: 29%;
+    height: auto;
+    margin: 10px 15px 40px;
   }
 
   #contact_wrap #contact_bg {
@@ -1147,10 +1158,10 @@
     width: 1028px;
     margin: 0 auto;
   }
-  #portfolio_wrap .portfolio_box li {
+  /* #portfolio_wrap .portfolio_box li {
     width: 23%;
     margin: 10px 10px 40px;
-  }
+  } */
 
   #contact_wrap {
     height: 750px;
