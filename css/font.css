@@ -18,7 +18,6 @@
 }
 
 
-
 @font-face {
   font-family: "MinionPro_It";
   src: url(../font/MinionPro-It.otf)
@@ -46,5 +45,22 @@
 @font-face {
   font-family: "NEXON.lv2_B";
   src: url(../font/NEXON\ Lv2\ Gothic\ Bold.ttf)
+    	format("truetype");
+}
+
+
+@font-face {
+  font-family: "NotoSans_R";
+  src: url(../font/NotoSansKR-Regular.otf)
+    	format("truetype");
+}
+@font-face {
+  font-family: "NotoSans_M";
+  src: url(../font/NotoSansKR-Medium.otf)
+    	format("truetype");
+}
+@font-face {
+  font-family: "NotoSans_B";
+  src: url(../font/NotoSansKR-Bold.otf)
     	format("truetype");
 }
