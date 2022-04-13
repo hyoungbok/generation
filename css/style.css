@@ -903,7 +903,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
   }
 
   #skills_wrap .skills_title {
@@ -992,6 +992,7 @@
   }
   #skills_wrap .skills_box ul {
     flex-wrap: wrap;
+		justify-content: inherit;
   }
   #skills_wrap .skills_box li {
     margin: 10px 20px;
