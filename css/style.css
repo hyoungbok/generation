@@ -89,7 +89,7 @@
   color: #fff;
   padding: 10px 20px;
   font-size: 22px;
-  font-family: Lime_B;
+  font-family: "Lime_B";
 }
 #menu a.on {
   color: #ffca6f;
@@ -123,16 +123,17 @@
 #banner_wrap .banner_text .text01 {
   font-size: 36px;
   color: #a77814;
-  font-family: MinionPro_It;
+  font-family: "MinionPro_It";
 }
 #banner_wrap .banner_text .text02 {
   font-size: 36px;
   color: #a77814;
-  font-family: MinionPro_It;
+  font-family: "MinionPro_It";
 }
 #banner_wrap .banner_text .text03 {
   font-size: 14px;
   font-style: italic;
+  font-family: "NotoSans_R";
   margin-top: 15px;
 }
 #banner_wrap .banner_box {
@@ -164,7 +165,7 @@
 }
 .scroll .scroll_img {
   position: absolute;
-  bottom: 70px;
+  bottom: 50px;
   left: 50%;
   margin-left: -20px;
   cursor: pointer;
@@ -192,7 +193,7 @@
 #about_wrap .content_text {
   text-align: center;
   font-size: 14px;
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_B";
   color: #9c6060;
 }
 
@@ -283,7 +284,7 @@
   margin: 0 auto;
 }
 #fixd_bg .fixd_text .text02 {
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_R";
   font-size: 11px;
   padding-top: 20px;
 }
@@ -327,7 +328,7 @@
 #skills_wrap .skills_title {
   text-align: center;
   font-size: 14px;
-  font-family: "NEXON.lv1_R";
+  font-family: "NotoSans_R";
   font-style: italic;
   line-height: 1.6;
   margin-bottom: 50px;
@@ -342,7 +343,7 @@
 }
 #skills_wrap .skill .skill_name {
   width: 110px;
-  font-family: "NEXON.lv1_R";
+  font-family: "NotoSans_R";
   margin-top: 3px;
   letter-spacing: -0.3px;
   font-size: 13px;
@@ -438,7 +439,7 @@
 #portfolio_wrap .portfolio_title {
   text-align: center;
   font-size: 14px;
-  font-family: "NEXON.lv1_R";
+  font-family: "NotoSans_R";
   font-style: italic;
   line-height: 1.6;
   margin-bottom: 50px;
@@ -456,7 +457,7 @@
   margin-right: 10px;
   color: #fff;
   font-size: 16px;
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_R";
 }
 #portfolio_wrap .portfolio_tab a.on {
   background-color: #feae00;
@@ -497,7 +498,7 @@
   width: 100%;
   height: 100%;
   color: #d1d1d1;
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_R";
   font-size: 16px;
 	padding: 50px 20px;
   background: rgba(0, 0, 0, 0.5);
@@ -510,7 +511,7 @@
   height: 50px;
   background: #ffc13e;
   color: #fff;
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_R";
   font-size: 16px;
   line-height: 50px;
 	position: absolute;
@@ -549,7 +550,7 @@
 #contact_wrap h3 {
   text-align: center;
   font-size: 34px;
-  font-family: "NEXON.lv2_B";
+  font-family: "NotoSans_B";
   color: #fff;
   padding-top: 40px;
 }
@@ -577,7 +578,7 @@
   color: #fff;
   text-align: center;
   margin-top: 30px;
-  font-family: "NEXON.lv1_R";
+  font-family: "NotoSans_R";
   letter-spacing: 1.2px;
 }
 #contact_wrap .top_icon p,
@@ -615,7 +616,7 @@
   -ms-transform-origin: 45px 65px;
 
   color: #ffad00;
-  font-family: "NEXON.lv1_R";
+  font-family: "NotoSans_R";
   font-style: italic;
   font-size: 12px;
 }
@@ -751,7 +752,7 @@
 }
 
 #footer .footer_wrap h4 {
-  font-family: "NEXON.lv2_R";
+  font-family: "NotoSans_R";
   letter-spacing: 1.5px;
   font-size: 20px;
 }
@@ -771,7 +772,7 @@
 
 @media all and (min-width: 500px) {
   #fixd_bg .fixd_text .text01 {
-    font-family: "NEXON.lv2_B";
+    font-family: "NotoSans_B";
     font-size: 24px;
     padding: 30px 0 10px;
     border-bottom: 2px solid #feae00;
@@ -779,7 +780,7 @@
     margin: 0 auto;
   }
   #fixd_bg .fixd_text .text02 {
-    font-family: "NEXON.lv2_R";
+    font-family: "NotoSans_R";
     font-size: 13px;
     padding-top: 20px;
   }
@@ -854,7 +855,7 @@
   }
 
   .scroll .scroll_img {
-    bottom: 80px;
+    bottom: 50px;
   }
 
   #about {
