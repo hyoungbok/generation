@@ -1,3 +1,17 @@
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+	width: 0.8rem;
+	background: #c4ba9e;
+	;
+}
+::-webkit-scrollbar-thumb{
+	background: #fdc893;
+	border-radius: 0.5rem;
+}
+
+
+
 #wrap {
   width: 100%;
   background: #aaa;
