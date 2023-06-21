@@ -8,6 +8,9 @@
 }
 body {
 	overflow-x: hidden;
+	font-size: 10px;
+	font-family: 'NotoSans_R';
+	word-break: keep-all;
 }
 ul, ol, dl {
   list-style: none;
@@ -24,4 +27,7 @@ a {
 i, em, address {
 	font-style: normal;
 	font-weight: normal;
+}
+img{
+	width: 100%;
 }

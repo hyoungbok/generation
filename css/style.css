@@ -1,3 +1,4 @@
+@charset "utf-8";
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
@@ -10,11 +11,9 @@
 	border-radius: 0.5rem;
 }
 
-
-
 #wrap {
   width: 100%;
-  background: #aaa;
+  background: #fff;
 }
 #header {
   width: 100%;
@@ -25,16 +24,18 @@
   z-index: 4;
 }
 #logo {
+	position: relative;
   height: 80px;
-  text-align: center;
 }
 #logo a {
-  background: url("../img/logo.png") no-repeat center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
   display: inline-block;
   width: 140px;
-  height: 70px;
-  background-size: contain;
-  margin-top: 5px;
+  height: 50px;
+  background: url("../img/logo.png") no-repeat center / contain;
 }
 #logo a span.skip {
   position: absolute;
@@ -113,57 +114,57 @@
   color: #ffca6f;
 }
 
+.content{
+	padding: 0 20px;
+	overflow: hidden;
+}
+
+
 /* banner */
 #banner {
   position: relative;
+	padding-top: 80px;
   background: #d0c7be;
-  width: 100%;
-  height: 500px;
-  padding-top: 80px;
 }
 #banner_wrap {
-  width: 100%;
-  height: 450px;
+	position: relative;
   display: flex;
   align-items: center;
-  position: relative;
+	width: 100%;
+	height: 430px;
 }
 #banner_wrap .banner_text {
-  position: absolute;
-  top: 80px;
-  left: 5%;
   z-index: 1;
 }
-#banner_wrap .banner_text .text01 {
-  font-size: 36px;
-  color: #a77814;
-  font-family: "MinionPro_It";
-}
+#banner_wrap .banner_text .text01,
 #banner_wrap .banner_text .text02 {
-  font-size: 36px;
   color: #a77814;
+  font-size: 28px;
   font-family: "MinionPro_It";
 }
 #banner_wrap .banner_text .text03 {
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
   font-family: "NotoSans_R";
   margin-top: 15px;
 }
+
 #banner_wrap .banner_box {
-  width: 55%;
-  height: 230px;
-  border: 4px solid #fff;
   position: absolute;
   left: 18%;
   top: 50px;
+  width: 55%;
+	max-width: 550px;
+	height: 200px;
+  border: 4px solid #fff;
 }
 #banner_wrap .banner_img {
-  width: 55%;
-  height: 240px;
-  right: 5%;
-  top: 110px;
   position: absolute;
+  top: 150px;
+  right: 5%;
+  width: 55%;
+	max-width: 550px;
+	height: 200px;
   background: url("../img/banner.png") no-repeat -40px center;
   background-size: cover;
 }
@@ -179,78 +180,79 @@
 }
 .scroll .scroll_img {
   position: absolute;
-  bottom: 50px;
+  bottom: 5%;
   left: 50%;
-  margin-left: -20px;
-  cursor: pointer;
-}
-.scroll .scroll_img img {
+	transform: translateX(-50%);
   width: 40px;
   height: 26px;
+  cursor: pointer;
 }
 
-#about {
-  width: 100%;
-  height: 1200px;
-  background-color: #e2ded3;
-  overflow: hidden;
-  position: relative;
-}
-#about_wrap h2 {
+.content h2 {
+  padding: 80px 0 20px;
+  font-size: 50px;
   font-family: "CevicheOne";
   text-align: center;
-  font-size: 50px;
   color: #9c6060;
-  padding: 90px 0 20px;
 }
 
+/* about */
+#about {
+  position: relative;
+  width: 100%;
+  background-color: #e2ded3;
+  overflow: hidden;
+}
 #about_wrap .content_text {
+  font-size: 15px;
   text-align: center;
-  font-size: 14px;
   font-family: "NotoSans_B";
   color: #9c6060;
 }
-
 #about_wrap .about_img {
-  text-align: center;
-  margin: 50px 0 20px;
+	padding: 50px 0 20px;
+	margin: 0 auto;
+	width: 300px;
 }
 #about_wrap .about_menu {
-  width: 90%;
-  padding-left: 6%;
-  margin-top: 60px;
+  width: 100%;
 }
-#about_wrap .about_tap ul {
+#about_wrap .about_tap .panel {
   display: flex;
 }
-#about_wrap .about_tap a {
+#about_wrap .about_tap .link {
+	margin-right: 20px;
+	margin-bottom: 20px;
   display: inline-block;
-  padding: 10px 20px 10px 0px;
-  font: 18px "NEXON.lv2_B";
+  font: 15px "NEXON.lv2_B";
 }
-#about_wrap .about_tap a.on {
+#about_wrap .about_tap .link.on {
+  color: #ffad00;
+	border-bottom: 1px solid #ffad00;
+}
+#about_wrap .about_tap .link:hover {
   color: #ffad00;
 }
-#about_wrap .about_tap a:hover {
-  color: #ffad00;
+#about_wrap .tab_content{
+	height: 0;
+	overflow: hidden;
 }
-
-#about_wrap .about_panel {
-  position: relative;
-}
-
-#about_wrap .about_panel > div {
-  margin-top: 30px;
-  position: absolute;
-  top: 800px;
+#about_wrap .tab_content.on{
+	padding-bottom: 160px;
+	margin-top: 10px;
+	height: auto;
+	overflow: inherit;
 }
 #about #panel01 li {
-  font: 13px "NotoSans_R";
+	position: relative;
   margin-bottom: 20px;
+	padding-left: 18px;
+  font: 13px "NotoSans_R";
   letter-spacing: 0.7px;
-  text-indent: -15px;
 }
 #about_wrap #panel01 .checkR {
+	position: absolute;
+	left: 0;
   color: #fd5959;
   margin-right: 5px;
 }
@@ -272,18 +274,19 @@
   font: 1.1em "NotoSans_B";
   margin: 30px 0px 10px;
 }
+#about_wrap #panel03 .about_me_text .bold:first-child {
+	margin-top: 0;
+}
 
 #fixd_bg {
-  width: 100%;
-  height: 130px;
-  background: url(../img/night-view.jpg) no-repeat center;
-  background-size: cover;
   position: absolute;
+	left: 0;
   bottom: 0;
+  width: 100%;
+  background: url(../img/night-view.jpg) no-repeat center / cover;
 }
 #fixd_bg .fixd_text {
   width: 100%;
-  height: 130px;
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   color: #fff;
@@ -299,16 +302,16 @@
 }
 #fixd_bg .fixd_text .text02 {
   font-family: "NotoSans_R";
-  font-size: 11px;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
+/* skills */
 #skills {
-  width: 100%;
-  height: 600px;
-  background: linear-gradient(#e1dfd2, #fff);
   position: relative;
+  width: 100%;
+  background: linear-gradient(#e1dfd2, #fff);
 }
+	/* skill image */
 #skills_wrap .skills_box {
   display: none;
 }
@@ -319,51 +322,40 @@
 }
 #skills_wrap .skills_box li {
   width: 70px;
-  height: 90px;
   border: 1px solid #838383;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 3px 3px 5px #999;
   margin: 10px;
 }
-#skills_wrap .skills_box img {
-  width: 100%;
-  height: 100%;
-}
-
-#skills_wrap h2 {
-  font-family: "CevicheOne";
-  text-align: center;
-  font-size: 50px;
-  color: #9c6060;
-  padding: 90px 0 20px;
-}
-
 #skills_wrap .skills_title {
+  margin-bottom: 50px;
+  font-size: 15px;
+  color: #9c6060;
   text-align: center;
-  font-size: 14px;
   font-family: "NotoSans_R";
   font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 50px;
-  color: #9c6060;
 }
+#skills_wrap .skills_graph{
+	padding-bottom: 50px;
+}
+
 #skills_wrap .skill {
-  width: 90%;
+  width: 100%;
   height: 30px;
   margin: 0 auto;
   padding: 5px 0px;
   display: flex;
 }
 #skills_wrap .skill .skill_name {
-  width: 110px;
-  font-family: "NotoSans_R";
   margin-top: 3px;
-  letter-spacing: -0.3px;
+  width: 110px;
   font-size: 13px;
+  font-family: "NotoSans_R";
+  letter-spacing: -0.3px;
 }
 #skills_wrap .skill .graph_bg {
-  width: 380px;
+  width: 100%;
   height: 16px;
   position: relative;
   background: #f4f4f4;
@@ -437,58 +429,47 @@
   font-size: 13px;
 }
 
+/* portfolio */
 #portfolio {
   width: 100%;
-  padding-bottom: 50px;
   background: #fff;
-}
-#portfolio_wrap h2 {
-  font-family: "CevicheOne";
-  text-align: center;
-  font-size: 50px;
-  color: #9c6060;
-  padding: 90px 0 20px;
 }
 
 #portfolio_wrap .portfolio_title {
-  text-align: center;
-  font-size: 14px;
+  margin-bottom: 50px;
+  font-size: 15px;
+  color: #9c6060;
   font-family: "NotoSans_R";
   font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 50px;
-  color: #9c6060;
+  text-align: center;
 }
 #portfolio_wrap .portfolio_tab ul {
-  margin-left: 4%;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+}
+#portfolio_wrap .portfolio_tab ul li:not(:last-child){
+	margin-right: 10px;
 }
 #portfolio_wrap .portfolio_tab a {
   padding: 8px 12px;
+  font-size: 13px;
   background: #000;
-  border-radius: 10px;
-  margin-right: 10px;
+  border-radius: 20px;
   color: #fff;
-  font-size: 16px;
   font-family: "NotoSans_R";
 }
 #portfolio_wrap .portfolio_tab a.on {
   background-color: #feae00;
 }
-#portfolio_wrap .portfolio_tab a:hover {
-  background-color: #feae00;
-}
 #portfolio_wrap .portfolio_box ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-	padding: 0 20px;
+  justify-content: center;
 }
-#portfolio_wrap .portfolio_box li {
+#portfolio_wrap .portfolio_box ul li {
   position: relative;
+  margin: 10px 0 20px;
   height: auto;
-  margin: 10px 3% 20px;
   border-radius: 15px;
   box-shadow: 3px 3px 5px #838383;
   overflow: hidden;
@@ -496,10 +477,6 @@
 #portfolio_wrap .portfolio_box a {
   display: inline-block;
   width: 100%;
-}
-#portfolio_wrap .portfolio_box img {
-  width: 100%;
-	object-fit: cover;
 }
 #portfolio_wrap .portfolio_box li div {
 	display: block;
@@ -520,6 +497,8 @@
   transition: 1s;
 }
 #portfolio_wrap .portfolio_box li div span{
+	position: absolute;
+	bottom: -100%;
 	display: block;
   width: 100%;
   height: 50px;
@@ -528,77 +507,49 @@
   font-family: "NotoSans_R";
   font-size: 16px;
   line-height: 50px;
-	position: absolute;
-	bottom: -100%;
   transition: 1s;
 	text-align: center;
-	
-}
-#portfolio_wrap .portfolio_box li:hover div p {
-  opacity: 1;
-}
-#portfolio_wrap .portfolio_box li:hover div span {
-  bottom: 0;
 }
 
-#contact_wrap {
-  width: 100%;
-  height: 570px;
+/* contact */
+#contact{
+	padding: 80px 0 0; 
+	overflow: hidden;
+}
+#contact_bg {
   position: relative;
-  background: #fff;
-  overflow: hidden;
-}
-#contact_wrap h2 {
-  font-family: "CevicheOne";
-  text-align: center;
-  font-size: 50px;
-  color: #9c6060;
-  padding: 90px 0 30px;
-}
-#contact_wrap #contact_bg {
+	padding: 40px;
   width: 100%;
-  height: 400px;
   background: url(../img/contant-bg.png) no-repeat left;
   background-size: cover;
 }
 #contact_wrap h3 {
   text-align: center;
-  font-size: 34px;
+  font-size: 32px;
   font-family: "NotoSans_B";
   color: #fff;
-  padding-top: 40px;
 }
-#contact_wrap .top_icon {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
-#contact_wrap .top_icon > div {
-  width: 200px;
+
+#contact_wrap .contact_name,
+#contact_wrap .contact_name .cv{
+	position: relative;
+	width: 100%;
+	margin-top: 30px;
   color: #fff;
-  text-align: center;
-  margin-top: 30px;
   font-family: "NEXON.lv1_R";
   letter-spacing: 1.2px;
 }
-
-#contact_wrap .bottom_icon {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
-#contact_wrap .bottom_icon > div {
-  width: 170px;
-  color: #fff;
-  text-align: center;
-  margin-top: 30px;
-  font-family: "NotoSans_R";
-  letter-spacing: 1.2px;
+#contact_wrap .icon_img{
+	width: 42px;
+	filter: drop-shadow(2px 4px 6px black);
 }
 #contact_wrap .top_icon p,
 #contact_wrap .bottom_icon p {
+	position: absolute;
+	top: 50%;
+	left: 55px;
+	transform: translateY(-50%);
   font-size: 13px;
-  margin-top: 10px;
   color: #fff;
 }
 
@@ -606,6 +557,26 @@
   color: #ffad00;
   font-weight: bold;
 }
+
+
+
+#footer {
+  width: 100%;
+  padding: 30px 0;
+  position: relative;
+  background: #000;
+  border-top: 1px solid #feae00;
+}
+#footer .footer_wrap {
+  color: #fff;
+  text-align: center;
+}
+#footer .footer_wrap p {
+  font-size: 10px;
+  font-style: italic;
+}
+
+
 
 #float {
   display: none;
@@ -644,6 +615,8 @@
   top: 10px;
   left: -30px;
 }
+
+
 /* buttom */
 #float_side ul {
   position: absolute;
@@ -753,55 +726,18 @@
   border: none;
 }
 
-#footer {
-  width: 100%;
-  padding: 50px 0;
-  position: relative;
-  background: #000;
-  border-top: 1px solid #feae00;
-}
-#footer .footer_wrap {
-  color: #fff;
-  text-align: center;
-}
-
-#footer .footer_wrap h4 {
-  font-family: "NotoSans_R";
-  letter-spacing: 1.5px;
-  font-size: 20px;
-}
-#footer .footer_wrap p {
-  font-size: 10px;
-  font-style: italic;
-  margin-top: 25px;
-}
-
-/* 
-	-webkit-transform: rotate(90deg) ;	크롬, 사파리
-	-webkit-transform-origin: left top;	회전 위치 정리 왼쪽 위
-	-moz-transform:  ;			파이어폭스
-	-ms-transform: ;			익스플로러
-	-ms-transform: ;			오페라
-	*/
 
 @media all and (min-width: 500px) {
+  
   #fixd_bg .fixd_text .text01 {
-    font-family: "NotoSans_B";
-    font-size: 24px;
-    padding: 30px 0 10px;
-    border-bottom: 2px solid #feae00;
     width: 200px;
-    margin: 0 auto;
+    font-size: 24px;
   }
   #fixd_bg .fixd_text .text02 {
-    font-family: "NotoSans_R";
     font-size: 13px;
-    padding-top: 20px;
-  }
-  #portfolio_wrap .portfolio_box li {
-    height: auto;
   }
 }
+
 
 @media all and (min-width: 660px) {
   #header_wrap {
@@ -810,26 +746,23 @@
     align-items: center;
     justify-content: space-between;
   }
-  #logo {
-    text-align: left;
-    margin-left: 5%;
-  }
-  #logo h1 {
-    display: inline-block;
+  #logo a{
+    top: 50%;
+    transform: translateY(-50%);
   }
   #mo_btn {
     display: none;
   }
   #menu {
     display: block !important;
-    background: none;
     height: auto;
+    background: none;
   }
   #menu ul {
     padding-top: 0;
     display: flex;
     justify-content: flex-end;
-    margin-right: 5%;
+    margin-right: 20px;
   }
   #menu ul li {
     margin: 0;
@@ -839,21 +772,13 @@
     padding: 10px 10px;
   }
 
-  #banner {
-    height: 600px;
-  }
 
   #banner_wrap {
     height: 600px;
   }
-  #banner_wrap .banner_text {
-    top: 150px;
-  }
-  #banner_wrap .banner_text .text01 {
-    font-size: 39px;
-  }
+  #banner_wrap .banner_text .text01,
   #banner_wrap .banner_text .text02 {
-    font-size: 39px;
+    font-size: 40px;
   }
   #banner_wrap .banner_text .text03 {
     font-size: 15px;
@@ -868,16 +793,13 @@
     top: 80px;
   }
 
-  .scroll .scroll_img {
-    bottom: 50px;
-  }
+	.content h2 {
+		font-size: 60px;
+	}
 
   #about {
-    height: 1050px;
+    padding-bottom: 100px;
     overflow: hidden;
-  }
-  #about_wrap h2 {
-    font-size: 60px;
   }
   #about_wrap .content_text {
     font-size: 16px;
@@ -887,40 +809,28 @@
     margin-top: 80px;
     justify-content: center;
   }
-  #about_wrap .about_img img {
-    width: 230px;
-    margin-right: 10px;
+	#about_wrap .about_img{
+    padding: 0;
+		width: 230px;
   }
   #about_wrap .about_menu {
     width: 50%;
   }
 
-  #fixd_bg {
-    height: 150px;
-    background-position-y: -20px;
-  }
-  #fixd_bg .fixd_text {
-    height: 150px;
-  }
   #fixd_bg .fixd_text .text02 {
     font-size: 15px;
-    padding-top: 25px;
+    padding: 25px 0 50px;
   }
 
-  #skills {
-    height: 700px;
+  #skills_wrap {
+    height: 650px;
   }
-  #skills_wrap h2 {
-    font-size: 60px;
-  }
-
   #skills_wrap .skills_box {
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
   }
-
   #skills_wrap .skills_title {
     font-size: 16px;
     margin-bottom: 40px;
@@ -932,16 +842,22 @@
     width: 440px;
   }
 
-  #portfolio_wrap h2 {
-    font-size: 60px;
-  }
   #portfolio_wrap .portfolio_title {
     font-size: 16px;
   }
+	
+	#portfolio_wrap .portfolio_box li:hover div p {
+		opacity: 1;
+	}
+	#portfolio_wrap .portfolio_box li:hover div span {
+		bottom: 0;
+	}
 
-  #contact_wrap h2 {
-    font-size: 60px;
-  }
+	#contact_wrap .top_icon p, 
+	#contact_wrap .bottom_icon p{
+		left: 60px;
+		font-size: 15px;
+	}
 
   #float {
     display: block;
@@ -949,157 +865,133 @@
   }
 }
 
+
 @media all and (min-width: 770px) {
-  #banner {
-    height: 650px;
-  }
-  #banner_wrap {
-    height: 650px;
+	
+	#banner_wrap {
+		height: 650px;
   }
   #banner_wrap .banner_img {
     height: 330px;
     top: 180px;
   }
-
+	
   #banner_wrap .banner_box {
-    height: 320px;
+		height: 320px;
     top: 80px;
   }
   #about_wrap .about_menu {
-    width: 55%;
+		width: 55%;
   }
-  #about_wrap .about_img img {
-    width: 240px;
+  #about_wrap .about_img {
+		width: 240px;
     margin-right: 20px;
   }
-  #about_wrap .about_tap a {
-    font-size: 20px;
+  #about_wrap .about_tap .link {
+		font-size: 20px;
   }
-  #about #panel01 li {
-    font-size: 15px;
-  }
+  #about_wrap #panel01 li,
   #about_wrap #panel02 li {
-    font-size: 15px;
+		font-size: 15px;
   }
   #about_wrap #panel03 .about_me_text {
-    font-size: 15px;
+		font-size: 15px;
   }
-
-  #fixd_bg .fixd_text {
-    height: 170px;
-  }
-  #fixd_bg .fixd_text .text01 {
-    font-size: 28px;
-  }
-  #fixd_bg .fixd_text .text02 {
-    font-size: 18px;
-  }
-
+	
+	
   #skills_wrap .skills_container {
-    display: flex;
+		display: flex;
     width: 98%;
     padding-top: 50px;
   }
   #skills_wrap .skills_box {
-    width: 35%;
+		width: 35%;
     position: inherit;
     margin: 0 auto;
   }
   #skills_wrap .skills_box ul {
-    flex-wrap: wrap;
+		flex-wrap: wrap;
 		justify-content: inherit;
   }
   #skills_wrap .skills_box li {
-    margin: 10px 20px;
+		margin: 10px 20px;
     width: 80px;
     height: 100px;
   }
-
+	
   #skills_wrap .skills_graph {
-    width: 60%;
+		width: 60%;
   }
   #skills_wrap .skills_title {
-    text-align: left;
+		text-align: left;
   }
   #skills_wrap .skill .skill_name {
-    font-size: 15px;
+		font-size: 15px;
   }
   #skills_wrap .skill .skill_p {
-    font-size: 15px;
+		font-size: 15px;
   }
-
-  #portfolio_wrap .portfolio_box ul {
-    justify-content: normal;
-  }
-
-  
-	#portfolio_wrap .portfolio_box li {
-		position: relative;
-		width: 44%;
-		height: auto;
-		margin: 10px 3% 20px;
-		border-radius: 15px;
-		box-shadow: 3px 3px 5px #838383;
-		overflow: hidden;
+	#portfolio_wrap .portfolio_box ul{
+		justify-content: space-between;
 	}
-
-  #contact_wrap {
-    height: 650px;
-  }
-
-  #contact_wrap #contact_bg {
-    width: 90%;
+	#portfolio_wrap .portfolio_box ul li {
+		position: relative;
+		width: 48%;
+		height: auto;
+	}
+		
+	#contact_bg {
+		width: 90%;
     border-radius: 20px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0 auto 80px;
   }
-
-  #contact_wrap .top_icon > div {
-    width: 240px;
-  }
+	#contact_wrap .top_icon,
+	#contact_wrap .bottom_icon {
+		display: flex;
+		justify-content: center;
+		padding-top: 20px;
+	}
+	#contact_wrap .top_icon > div,
+	#contact_wrap .bottom_icon > div {
+		width: 240px;
+		color: #fff;
+		text-align: center;
+		margin-top: 30px;
+		font-family: "NEXON.lv1_R";
+		letter-spacing: 1.2px;
+	}
+	#contact_wrap .icon_img{
+		margin: 0 auto;
+	}
   #contact_wrap .bottom_icon > div {
-    width: 240px;
+		width: 240px;
   }
   #contact_wrap .top_icon p,
   #contact_wrap .bottom_icon p {
-    font-size: 16px;
+		position: initial;
+		font-size: 16px;
     margin-top: 15px;
   }
-
-  #footer .footer_wrap h4 {
-    font-size: 22px;
-  }
-}
+} 
 
 @media all and (min-width: 900px) {
-  #banner_wrap .banner_text .text01 {
-    font-size: 44px;
-  }
-  #banner_wrap .banner_text .text02 {
-    font-size: 44px;
-  }
-  #banner_wrap .banner_text .text03 {
-    margin-top: 20px;
-  }
-  #portfolio_wrap .portfolio_box li {
-    height: auto;
-  }
-
-  #skills_wrap .skills_box li {
-    margin: 10px 20px;
+	
+	
+	#skills_wrap .skills_box li {
+		margin: 10px 20px;
     width: 90px;
     height: 110px;
   }
-
-	#portfolio_wrap .portfolio_box li {
-    width: 29%;
+	
+	#portfolio_wrap .portfolio_box ul li {
+		width: 30%;
     height: auto;
-    margin: 10px 15px 40px;
   }
-
+	
   #contact_wrap #contact_bg {
-    width: 85%;
-  }
+		width: 85%;
+  } 
 }
 
 @media all and (min-width: 1028px) {
@@ -1107,83 +999,69 @@
     width: 1028px;
     margin: 0 auto;
   }
-
   #banner {
-    height: 750px;
+		height: 750px;
   }
   #banner_wrap {
-    position: relative;
+		position: relative;
     width: 1028px;
     margin: 0 auto;
   }
   #banner_wrap .banner_img {
-    width: 550px;
     height: 400px;
   }
   #banner_wrap .banner_box {
-    width: 550px;
     height: 400px;
   }
-
+	
   #about {
-    height: 1100px;
+		padding-bottom: 150px;
   }
   #about_wrap {
-    width: 1028px;
+		width: 1028px;
     margin: 0 auto;
   }
-  #about_wrap .about_img img {
-    width: 280px;
+  #about_wrap .about_img {
+		width: 260px;
   }
   #about_wrap .about_menu {
-    margin-left: 50px;
+		margin-left: 50px;
     width: 60%;
   }
-  #about #panel01 li {
-    font-size: 18px;
-    text-indent: -20px;
-  }
-  #about_wrap #panel02 li {
-    font-size: 18px;
-  }
-  #about_wrap #panel03 .about_me_text {
-    font-size: 18px;
-  }
-
+  
+	
   #skills_wrap {
-    width: 1028px;
     margin: 0 auto;
+		padding-bottom: 20px;
+		width: 1028px;
+		height: auto;
   }
   #skills_wrap .skills_container {
-    width: 100%;
+		width: 100%;
   }
   #skills_wrap .skills_box {
-    width: 40%;
+		width: 40%;
   }
   #skills_wrap .skills_box li {
-    margin: 20px 10px;
+		margin: 20px 10px;
     width: 105px;
     height: 130px;
   }
-
+	
   #skills_wrap .skills_graph {
-    width: 55%;
+		width: 55%;
   }
-
+	
   #portfolio_wrap {
-    width: 1028px;
+		width: 1028px;
     margin: 0 auto;
-  }
-  /* #portfolio_wrap .portfolio_box li {
-    width: 23%;
-    margin: 10px 10px 40px;
-  } */
-
-  #contact_wrap {
-    height: 750px;
-  }
-  #contact_wrap #contact_bg {
+  }  
+  
+  #contact_bg {
     width: 850px;
-    padding: 30px 0;
   }
+	#contact_wrap .top_icon, 
+	#contact_wrap .bottom_icon {
+    justify-content: space-around;
+	}
 }

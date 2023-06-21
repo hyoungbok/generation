@@ -1,3 +1,4 @@
+
 // 스크롤하면 해더에 밑줄
 
 $(function () {
@@ -12,9 +13,31 @@ $(function () {
 	})
 })
 
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+	
+$(function () {
+	const sr = ScrollReveal({
+		origin: 'top',
+		distance: '60px',
+		duration: 2000,
+		delay: 400,
+		// reset: true
+	})
+
+	sr.reveal('#banner_wrap');
+	sr.reveal('#skills_wrap, #portfolio_wrap',  {
+		interval: 100
+	})
+	sr.reveal('.about_menu, #portfolio_wrap', {
+		origin: 'left'
+	});
+	sr.reveal('#about_wrap, .about_img, #contact_wrap', {
+		origin: 'right'
+	});
+})
+
 
 // 모바일 햄버거버튼 오픈 클로즈
-
 $(function(){
 	let isClick = false;
 	$("#mo_btn>button").click(function(){
@@ -67,10 +90,10 @@ $(function(){
 	});
 
 	let menu = $("#menu > ul > li");
-  let content = $("#container > div");
+  let content = $("#container > .content");
 	let btn = $("#float_side ul li");
   menu.click(function(e){
-		e.preventDefault();/* 휴레프 차단 */
+		e.preventDefault();
 		let tg=$(this);
 		let i=tg.index();
 
@@ -94,32 +117,6 @@ $(function(){
 });
 
 
-// 오픈했을때 베너 텍스트 오파시티로 보임
-
-$(function(){
-	const text01 = $(".banner_text> .text01");
-	const text02 = $(".banner_text> .text02");
-	const text03 = $(".banner_text> .text03");
-	const boxLine = $("#banner_wrap .banner_box");
-	text01.css("display","none");
-	text02.css("display","none");
-	text03.css({position:"absolute", bottom:"-200px", opacity:"0"});
-	boxLine.css("display","none");
-	setTimeout(()=>{
-		$(text01).fadeIn(500)
-	}, 500)
-	setTimeout(()=>{
-		$(text02).fadeIn(800)
-	}, 1200)
-	setTimeout(()=>{
-		$(boxLine).fadeIn(800)
-	},1800)
-	setTimeout(()=>{
-		$(text03).css({opacity:"1", bottom:"-50px", transition:"2s"})
-	}, 2800)
-});
-
-
 // 클리하시 밑으로 이동 버튼
 $(function(){
 	$(".scroll>.scroll_img>img").DB_springMove({
@@ -127,7 +124,7 @@ $(function(){
 			dir:"y",
 			mirror:1,
 			radius:6,
-			motionSpeed:0.1
+			motionSpeed:0.04
 	});
 	$(".scroll_img").on("click",function(){
 			$("html,body").animate({
@@ -137,67 +134,26 @@ $(function(){
 });
 
 
-// 프로파일 구간 들어오면 이동해 내용 보임
-$(function(){
-	let aboutImg = $(".about_img")
-	let aboutText = $(".about_menu")
-
-	
-	$(window).on("scroll", function(){
-		let win = $(window).scrollTop()
-		let aboutCont = $("#about")
-		let aboutOffset = aboutCont.offset().top
-		let winWidth = $(window).width()
-		if(winWidth <= 660){
-			aboutImg.css({left:"-100%", position:"relative"})
-			aboutText.css({left:"-100%", position:"relative"})
-			if(win >= aboutOffset-100){
-				aboutImg.css({left:"0", transition:"2s", opacity:"1"})
-			} else {
-				aboutImg.css({left:"-100%", transition:"2s", opacity:"0"}); 
-			}
-			if(win >= aboutOffset+150){
-				aboutText.css({left:"0", transition:"2s", opacity:"1"})	
-			}else {
-				aboutText.css({left:"-100%", transition:"2s", opacity:"0"}); 
-			}
-		} else {
-			aboutImg.css({left:"-100%", position:"relative"})
-			aboutText.css({left:"100%", position:"relative"})
-			if(win >= aboutOffset-200){
-				aboutImg.css({left:"0", transition:"2s", opacity:"1"})	
-				aboutText.css({left:"0", transition:"2s", opacity:"1"})			
-			} else {
-				aboutImg.css({left:"-100%", transition:"2s", opacity:"0"}); 
-				aboutText.css({left:"100%", transition:"2s", opacity:"0"});    
-			}
-
-		}
-	})
-})
-
-
-
-
 // 프로필 클릭시 내용 이동
-
 $(function(){
-	let isCreate = false;
-	let aboutTab = $(".about_tap > ul > li");
-	let aboutContent = $(".about_panel > div");
-
-	aboutTab.click(function(e){
-		e.preventDefault();
-		if (isCreate) return;
-
-		let a_tg = $(this);
-		let a_tc = a_tg.find(">a");
-		aboutTab.find(">a").removeClass("on");
-		a_tc.addClass("on");
-		i = a_tg.index();
-		aboutContent.css("top","800px");
-		aboutContent.eq(i).animate({top:"0px"}, 1000);
-	});
+	if($('.about_menu').length){
+		$('.about_menu').each(function(){
+			let that = $('.about_menu')
+			$(function(){
+				let idx = that.find('.link.on').index()
+				that.find('.tab_content').eq(idx).addClass('on').siblings().removeClass('on')
+			});
+			$('.link').on('click', function(e){
+				e.preventDefault()
+				let clickTab = null
+				if(this.tagName == 'A'){
+					clickTab = $($(this).attr('href'));
+				}
+				$(this).addClass('on').siblings().removeClass('on');
+				clickTab.addClass('on').siblings().removeClass('on');
+			})
+		})
+	}
 });
 
 

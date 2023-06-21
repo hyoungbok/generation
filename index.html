@@ -15,6 +15,7 @@
 	<script src="js/jquery.ba-throttle-debounce.js"></script> <!-- 그래프 -->
 	<script src="js/typed.js"></script>
 	<script src="js/script.js"></script>
+
 	<title>형복이 포트폴리오</title>
 </head>
 
@@ -44,7 +45,7 @@
 			</div>
 		</div> 	<!-- header end  -->
 		<div id="container">
-			<div id="banner">
+			<div id="banner" class="content">
 				<div id="banner_wrap">
 					<div class="banner_text">
 						<p class="text01">Welcom to My Portfolio</p>
@@ -56,12 +57,12 @@
 					</div>
 					<div class="banner_img"></div>
 					<div class="banner_box"></div>
-				</div>
-				<div class="scroll">
-					<span class="scroll_img"><img src="img/scroll01.png" alt=""></span>
+					<div class="scroll">
+						<span class="scroll_img"><img src="img/scroll01.png" alt=""></span>
+					</div>
 				</div>
 			</div>	<!-- banner end  -->
-			<div id="about">
+			<div id="about" class="content">
 				<div id="about_wrap">
 					<h2>ABOUT</h2>
 					<div class="content_text">
@@ -73,14 +74,14 @@
 						</div>
 						<div class="about_menu">
 							<div class="about_tap">
-								<ul>
-									<li><a href="#" class="on">PROFILE</a></li>
-									<li><a href="#">HISTORY</a></li>
-									<li><a href="#">ABOUT ME</a></li>
-								</ul>
+								<div class="panel">
+									<a href="#panel01" class="link on">PROFILE</a>
+									<a href="#panel02" class="link">HISTORY</a>
+									<a href="#panel03" class="link">ABOUT ME</a>
+								</div>
 							</div>
 							<div class="about_panel">
-								<div id="panel01" style="top: 0;">
+								<div id="panel01" class="tab_content">
 									<ul>
 										<li><span class="checkR">&#x2713;</span>이형복 (Lee Hyoung_Bok)</li>
 										<li><span class="checkR">&#x2713;</span>1985. 05. 06</li>
@@ -90,15 +91,19 @@
 										<li><span class="checkR">&#x2713;</span>대전 혜천전문대학 쥬얼리디자인과 졸업</li>
 									</ul>
 								</div>
-								<div id="panel02">
+								<div id="panel02" class="tab_content">
 									<ul>
+										<li>
+											<p class="bold">2022. 05 ~ ing</p>
+											<p>하이웹솔루션(우리은행 파견(운영 2022.07 ~ 2022.05))</p>
+										</li>
 										<li>
 											<p class="bold">2019. 06 ~ 2021. 08</p>
 											<p>강자매 쇼핑몰 웹디자인(카페24, 포토샵, 상세페이지 작업, 팝업)</p>
 										</li>
 										<li>
 											<p class="bold">2019. 03 ~ 2019.05</p>
-											<p>아르바이트 계약직(프론트앤드(Html, Css, Script)수정 보조</p>
+											<p>아르바이트 계약직 (Html, Css, Script)수정 보조</p>
 										</li>
 										<li>
 											<p class="bold">2017. 03 ~ 2018. 01</p>
@@ -118,7 +123,7 @@
 										</li>
 									</ul>
 								</div>
-								<div id="panel03">
+								<div id="panel03" class="tab_content">
 									<div class="about_me_text">
 										<p class="bold">#Strengths</p>
 										<p>
@@ -144,7 +149,7 @@
 					</div>
 				</div>
 			</div>	<!-- about end  -->
-			<div id="skills">
+			<div id="skills" class="content">
 				<div id="skills_wrap">
 					<h2>SKILLS</h2>
 					<div class="skills_container">
@@ -211,7 +216,7 @@
 					</div>
 				</div>
 			</div>	<!-- skills end  -->
-			<div id="portfolio">
+			<div id="portfolio" class="content">
 				<div id="portfolio_wrap">
 					<h2>PROTFOLIO</h2>
 					<div class="portfolio_title">
@@ -229,15 +234,6 @@
 					</div>
 					<div class="portfolio_box">
 						<ul>
-							<!-- <li class="p_16 clone">
-								<a href="project/dashBoard/index.html"  target="_blank">
-									<img src="img/dashBoard.jpg" alt="tetris">
-									<div>
-										<p></p>
-										<span>CLICK</span>
-									</div>
-								</a>
-							</li> -->
 							<li class="p_15 clone">
 								<a href="project/Halloween-website/index.html"  target="_blank">
 									<img src="img/halloween.jpg" alt="tetris">
@@ -364,42 +360,40 @@
 									</div>
 								</a>
 							</li>
-							<!-- <li class="p_01 clone">
-								<a href="project/Jestina/index.html" target="_blank">
-									<img src="img/jestina.jpg" alt="jestina">
-									<div>
-										<p></p>
-										<span>CLICK</span>
-									</div>
-								</a>
-							</li> -->
 						</ul>
 					</div>
 				</div>
 			</div>	<!-- portfolio end  -->
-			<div id="contact">
-				<div id="contact_wrap">
-					<h2>CONTACT</h2>
-					<div id="contact_bg">
+			<div id="contact" class="content">
+				<div id="contact_bg">
+					<div id="contact_wrap">
 						<h3>Thank You!</h3>
 						<div class="top_icon">
 							<div class="contact_name phon">
-								<img src="img/icon1.png" alt="phon">
+								<div class="icon_img">
+									<img src="img/icon1.png" alt="phon">
+								</div>
 								<p class="point">010-6455-7159</p>
 							</div>
 							<div class="contact_name email">
-								<img src="img/icon2.png" alt="email">
+								<div class="icon_img">
+									<img src="img/icon2.png" alt="email">
+								</div>
 								<p>gole850506@naver.com</p>
 							</div>
 						</div>
 						<div class="bottom_icon">
 							<div class="contact_name address">
-								<img src="img/icon4.png" alt="address">
+								<div class="icon_img">
+									<img src="img/icon4.png" alt="address">
+								</div>
 								<p>서울시 구로구 구도동</p>
 							</div>
 							<div class="contact_name profile">
-								<a href="hyoungbok.pdf" target="_blank">
-									<img src="img/icon5.png" alt="profile">
+								<a href="hyoungbok.pdf" target="_blank" class="cv">
+									<div class="icon_img">
+										<img src="img/icon5.png" alt="profile">
+									</div>
 									<p>이력서 열기</p>
 								</a>
 							</div>
@@ -424,11 +418,15 @@
 		</div> 	<!-- container end  -->
 		<div id="footer">
 			<div class="footer_wrap">
-				<h4>제 홈페이지에 방문해 주셔서 감사합니다.</h4>
-				<p>COPYRIGHT &copy; 2021 -HyoungBok- All rights reserved</p>
+				<p>COPYRIGHT &copy; 2023 -HyoungBok- All rights reserved</p>
 			</div>
 		</div> 	<!-- footer end  -->
 	</div> 		<!-- wrap end  -->
+
+	
+
+	<!--=============== SCROLL REVEAL ===============-->
+	<script src="js/scrollreveal.min.js"></script>
 </body>
 
 </html>
