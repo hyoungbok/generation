@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SevenSprings</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/swiper-bundle.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/swiper-bundle.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var swiper = new Swiper('.top_event', {
+				slidesPerView: 1,
+				loop: true,
+				direction: 'vertical',
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
+				},
+
+			});
+
+
+			var swiper = new Swiper('.visual', {
+				slidesPerView: 1,
+				spaceBetween: 0,
+				loop: true,
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+
+			const menuItems = document.querySelectorAll('nav > ul > li');
+			menuItems.forEach((li) => {
+				// :scope = 선택된 아이
+				const mainLink = li.querySelector(':scope > a');
+
+				// 1. 대메뉴 li 영역 전체에 마우스가 들어왔을 때 (서브메뉴 포함)
+				li.addEventListener('mouseenter', () => {
+					mainLink.classList.add('on');
+				});
+
+				// 2. 대메뉴 li 영역 전체에서 마우스가 완전히 나갔을 때
+				li.addEventListener('mouseleave', () => {
+					mainLink.classList.remove('on');
+				});
+			});
+			
+
+			const brandLi = document.querySelectorAll('.main_goods > ul > li');
+			const boxImages = document.querySelectorAll('section.s01 .box_img');
+
+			brandLi.forEach((li, idx) => {
+				const targetBox = boxImages[idx];
+
+				li.addEventListener('mouseenter', () => targetBox?.classList.add('active'));
+				li.addEventListener('mouseleave', () => targetBox?.classList.remove('active'));
+			});
+
+			const textSwiper = new Swiper('.swiper_text', {
+				loop: true,
+				effect: 'fade', // 텍스트가 부드럽게 교체되도록 페이드 효과 추천
+				fadeEffect: { crossFade: true },
+				speed: 600,
+			});
+
+			// 2. 이미지 슬라이더 초기화 (페이지네이션 점 적용)
+			const imageSwiper = new Swiper('.swiper_image', {
+				loop: true,
+				speed: 600,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
+				},
+			});
+
+			// 3. 두 슬라이더를 하나처럼 움직이도록 연동
+			textSwiper.controller.control = imageSwiper;
+			imageSwiper.controller.control = textSwiper;
+
+
+		})
+	</script>
+
+</head>
+
+<body>
+	<div class="swiper top_event">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide slide_img1">
+				<a href="index.html"></a>
+			</li>
+			<li class="swiper-slide slide_img2">
+				<a href="index.html">
+					<img src="img/top-banner-left.png" alt>
+					<p>GOURMET <span>DESTINATION</span></p>
+					<img src="img/top-banner-right.png" alt>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<header class="center">
+		<h1><a href="sevensprings.html"><img src="img/logo.png" alt="SevenSprings"></a></h1>
+		<nav>
+			<ul>
+				<li><a href="#">BRAND</a>
+					<ul>
+						<li><a href="#">BRAND STORY</a></li>
+						<li><a href="#">매장정보</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="#">세븐스프링스</a></li>
+						<li><a href="#">세븐스프링스 블랙</a></li>
+						<li><a href="#">카페 세븐스프링스</a></li>
+						<li><a href="#">카페 파크7</a></li>
+					</ul>
+				</li>
+				<li><a href="#">BENEFIT</a>
+					<ul>
+						<li><a href="#">MEMBERSHIP 혜택</a></li>
+						<li><a href="#">제휴 할인&amp;상품권</a></li>
+					</ul>
+				</li>
+				<li><a href="#">EVENT</a>
+					<ul>
+						<li><a href="#">NEW</a></li>
+						<li><a href="#">EVENT</a></li>
+						<li><a href="#">SOCIAL LIVE</a></li>
+					</ul>
+				</li>
+				<li><a href="#">SUPPORT</a>
+					<ul>
+						<li><a href="#">SPECIAL PARTY</a></li>
+						<li><a href="#">Q&amp;A</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="swiper visual">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide slide_img1"><a href="#"></a></li>
+				<li class="swiper-slide slide_img2"><a href="#"></a></li>
+				<li class="swiper-slide slide_img3"><a href="#"></a></li>
+			</ul>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<section class=" s01">
+			<h2>BRAND STORY</h2>
+			<p>세븐스프링스는 건강한 외식 문화를 만들어 갑니다.</p>
+			<div class="main_goods">
+				<ul>
+					<li>
+						<a href="#">
+							<div class="goods_img"></div>
+							<div class="goods_info">
+								<img src="img/salad_icon_wh.png" alt>
+								<p>SALAD&middot;GRILL<br>RICE&middot;NOODLE&middot;DESSERT</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="goods_img"></div>
+							<div class="goods_info">
+								<img src="img/risotto_icon_wh.png" alt>
+								<p>PIZZA&middot;PASTA<br>SALAD&middot;RICE&middot;JUICE</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="goods_img"></div>
+							<div class="goods_info">
+								<img src="img/sushi_icon_wh.png" alt>
+								<p>BBQ&middot;SUSHI<br>SALAD&middot;PIZZA&middot;PASTA</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="box_img">
+				<img class="g_left" src=" img/brand_obj01_left.jpg" alt>
+				<img class="g_right" src=" img/brand_obj01_right.jpg" alt>
+			</div>
+			<div class="box_img">
+				<img class="g_left" src=" img/brand_obj02_left.jpg" alt>
+				<img class="g_right" src=" img/brand_obj02_right.jpg" alt>
+			</div>
+			<div class="box_img">
+				<img class="g_left" src=" img/brand_obj03_left.jpg" alt>
+				<img class="g_right" src=" img/brand_obj03_right.jpg" alt>
+			</div>
+		</section>
+		<div class="long_banner"></div>
+
+		<section class="center s02">
+			<h2 class="v_hidden">매장정보</h2>
+			<div class="swiper swiper_text">
+				<ul class="swiper-wrapper">
+					<!-- 슬라이드 1 -->
+					<li class="swiper-slide">
+						<h3 class="title">INFORMATION</h3>
+						<h4 class="subtitle">세븐스프링스 타임스퀘어점</h4>
+						<p class="desc">평일 런치 : 11:00 ~16:00 <br>평일 디너 : 17:00 ~ 22:00 (Break Time : 16:00~17:00)<br>주말/공휴일 :
+							11:00 ~ 22:00 (Break Time 없음)</p>
+					</li>
+					<li class="swiper-slide">
+						<h3 class="title">INFORMATION</h3>
+						<h4 class="subtitle">세븐스프링스 목동41타워점</h4>
+						<p class="desc">평일 런치 : 11:30 ~15:30 <br>평일 디너 : 17:30 ~ 22:00 (Break Time : 15:30~17:30)<br>주말/공휴일 :
+							11:30 ~ 22:00 (Break Time 없음) </p>
+					</li>
+					<li class="swiper-slide">
+						<h3 class="title">INFORMATION</h3>
+						<h4 class="subtitle">세븐스프링스 잠실 롯데월드점</h4>
+						<p class="desc">평일 런치 : 11:00 ~15:30 <br>평일 디너 : 17:00 ~ 22:00 (Break Time : 15:30~17:00)<br>주말/공휴일 :
+							11:00 ~ 22:00 (Break Time 없음)</p>
+					</li>
+					<li class="swiper-slide">
+						<h3 class="title">INFORMATION</h3>
+						<h4 class="subtitle">세븐스프링스 잠원점</h4>
+						<p class="desc">평일 런치 : 11:30 ~15:30 <br>평일 디너 : 17:30 ~ 22:00 (Break Time : 15:30~17:30)<br>주말/공휴일 :
+							11:30 ~ 22:00 (Break Time 없음)</p>
+					</li>
+					<li class="swiper-slide">
+						<h3 class="title">INFORMATION</h3>
+						<h4 class="subtitle">세븐스프링스 광화문점</h4>
+						<p class="desc">평일 런치 : 11:00 ~16:00 <br>평일 디너 : 17:00 ~ 22:00 (Break Time : 16:00~17:00)<br>주말/공휴일 :
+							11:30 ~ 22:00 (Break Time 없음) </p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="swiper swiper_image">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<img src="img/store01.png" alt="타임스퀘어점 전경">
+					</li>
+					<li class="swiper-slide">
+						<img src="img/store02.png" alt="목동41타워점 전경">
+					</li>
+					<li class="swiper-slide">
+						<img src="img/store03.png" alt="롯데월드점 전경">
+					</li>
+					<li class="swiper-slide">
+						<img src="img/store04.png" alt="잠원점 전경">
+					</li>
+					<li class="swiper-slide">
+						<img src="img/store05.png" alt="광화문점 전경">
+					</li>
+				</ul>
+				<!-- 페이지네이션 (이미지 하단 배치) -->
+				<!-- <div class="swiper-pagination-custom"></div> -->
+				<!-- <div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div> -->
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="top_footer center">
+			<ul>
+				<li>BRAND
+					<ul>
+						<li><a href="#">BRAND STORY</a></li>
+					</ul>
+				</li>
+				<li>MENU
+					<ul>
+						<li><a href="#">세븐스프링스</a></li>
+						<li><a href="#">세븐스프링스 블랙</a></li>
+						<li><a href="#">카페 세븐스프링스</a></li>
+						<li><a href="#">카페 파크7</a></li>
+					</ul>
+				</li>
+				<li>STORE
+					<ul>
+						<li><a href="#">매장정보</a></li>
+					</ul>
+				</li>
+				<li>BENEFIT
+					<ul>
+						<li><a href="#">MEMBERSHIP 혜택</a></li>
+						<li><a href="#">제휴 할인 &amp; 상품권</a></li>
+					</ul>
+				</li>
+				<li>EVENT&amp;STORY
+					<ul>
+						<li><a href="#">NEWS</a></li>
+						<li><a href="#">EVENT</a></li>
+						<li><a href="#">SOCIAL LIVE</a></li>
+					</ul>
+				</li>
+				<li>SUPPORT
+					<ul>
+						<li><a href="#">SPECIAL PARTY</a></li>
+						<li><a href="#">Q&amp;A</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="bottom_footer center">
+			<ul>
+				<li>채용안내</li>
+				<li>공고</li>
+				<li><strong>개인정보 처리방침</strong></li>
+				<li>이용약관</li>
+			</ul>
+			<ul>
+				<li>주소 : 서울특별시 종로구 북촌로</li>
+				<li>대표이사 : OOO</li>
+				<li>상호명 : (주)OOOOOO</li>
+				<li>사업자등록번호 : 100-00-00000</li>
+			</ul>
+			<ul>
+				<li>TEL : <a href="tel:1588-0000">1588-0000</a></li>
+				<li>제휴문의 : <a href="tel:02-0000-0000">02-0000-0000</a></li>
+			</ul>
+		</div>
+		<small></small>
+	</footer>
+
+</body>
+
+</html>
