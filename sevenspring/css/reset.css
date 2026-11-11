@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+
+/* 넥슨폰트 */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic';
+    src: url('../fonts/NEXONLv1GothicBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic';
+    src: url('../fonts/NEXONLv1GothicLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic';
+    src: url('../fonts/NEXONLv1GothicRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+html{ scroll-behavior: smooth;}
+
+body,header,nav,main,section,aside,footer,address,small,div,span,fieldset,legend,h1,h2,h3,h4,h5,h6,p,ul,ol,li,a,input {margin: 0;padding: 0;box-sizing: border-box;border: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;font-weight: normal;}
+img {vertical-align: bottom;}
+li {list-style: none;}
+address {font-style: normal;}
+small {font-size: inherit;}
+a {color: inherit;text-decoration: none;}
+.v_hidden {position: absolute;width: 1px;height: 1px;overflow: hidden;opacity: 0;left: -1px;}
+
+
+
