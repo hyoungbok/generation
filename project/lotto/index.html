@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lotto</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="container">
+			<h1>Lotto</h1>
+			<section>
+				<h2 class="hidden">숫자</h2>
+				<!-- 1부터 45까지 표시할 영역 -->
+				<div class="js-numbers style-number"></div>
+				<button class="js-btn style-btn">생성하기</button>
+				<!-- visible은 '보인다'인데, 이요소는 필요에 따라 안 보이기도 해야 한다. -->
+				<p class="js-ing visible">생성중.</p>
+				<!-- 로또 번호 만든 거 표시하는 영역 -->
+				<div class="result"></div>
+				<button class="js-reset style-reset">초기화</button>
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>

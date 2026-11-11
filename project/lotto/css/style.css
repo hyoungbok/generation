@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body,header,nav,main,section,aside,footer,address,small,div,span,fieldset,legend,h1,h2,h3,h4,h5,h6,p,ul,ol,li,a,input {
+	margin: 0;	padding: 0;	box-sizing: border-box;	border: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: inherit;	font-weight: normal;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+li {
+	list-style: none;
+}
+
+address {
+	font-style: normal;
+}
+
+small {
+	font-size: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+:root{
+	--color1:#0b1d3a;
+	--color2:#3b82b8;
+	--color3:#93c5fd;
+	--color4:#f2f5fb;
+}
+
+.hidden {position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0); /* 최신 브라우저 지원 */
+  border: 0;}
+
+.wrap{display: flex; justify-content: center; align-items: center; height: 100vh;}
+.container {
+	width: 360px;	text-align: center;	background-color: var(--color1);	padding: 0 20px 40px;	border-radius: 20px;
+}
+h1 {
+	font-size: 48px;	margin: 20px 0;	color: var(--color4);
+}
+
+.style-number {
+	margin: 0 auto;	display: flex;	flex-wrap: wrap;	justify-content: center;
+}
+
+.style-number>div {
+	width: 50px;	height: 36px;	margin: 5px;	padding: 5px;	text-align: center;
+}
+
+.number {
+	margin: 0;	line-height: 40px;	border-radius: 8px;	color: var(--color1);	background-color: var(--color3);
+}
+
+.selected>p {
+	color: var(--color1);	background-color: #e9b65f;
+}
+
+.style-btn {
+	margin-top: 25px;	padding: 10px 20px;	font-size: 16px;	color: var(--color1);	background-color: var(--color4);	border: none;	border-radius: 8px;	cursor: pointer;
+}
+
+.style-reset {
+	border: none;	border-radius: 6px;	color: #f4d7d4;	background-color: #ff6b6b;	padding: 10px 20px;	display: none;	margin: 20px auto 0;	cursor: pointer;
+}
+
+/* 버튼을 눌러도 외각선 안 나타나게 하기 */
+button:active,
+button:focus {
+	outline: none;
+}
+
+.result>div {
+	display: flex;	justify-content: center;	border-radius: 12px;	margin: 0 0 10px 0;	background-color: var(--color4);
+}
+
+.result>div>div {
+	margin: 10px;	width: 32px;	height: 32px;	font-size: 20px;	border-radius: 50%;	color: #fff;	line-height: 32px
+}
+
+.js-ing {
+	visibility: hidden;	text-align: center;	color: var(--color4);
+}
+
+.visible {
+	visibility: visible;
+}
+
+.style-reset {
+	display: none;
+}
