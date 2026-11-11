@@ -63,7 +63,7 @@ img{width: 100%; vertical-align: bottom;}
 body{max-width: 1920px; margin: 0 auto; font-family: 'Pretendard', sans-serif; background-color: var(--main_color); color: var(--main_text); font-size: 18px; line-height: 1.6;}
 
 
-section{padding: var(--p_top) 18px 0; max-width: var(--width); margin: 0 auto;}
+section{padding: var(--p_top) 18px 0; max-width: var(--width); margin: 0 auto; transition: all .3s;}
 section h2 {display: block; width: 100%; font-size: var(--h2); text-align: center; color: var(--sub_text); font-weight: 600;}
 button {display: flex; align-items: center; justify-content: center; width: 100%; background: transparent; border: none; color: inherit; font-family:inherit;font-size: inherit; padding: 0; cursor: pointer;}
 
@@ -103,7 +103,7 @@ header ul a.active{background: linear-gradient(135deg, #6eb9f7,	rgba(110, 185, 2
 }
 
 
-#about > div {display: grid; row-gap: 40px; margin-top: var(--p_top);}
+#about > div {display: grid; row-gap: 40px; margin-top: var(--p_top); transition: all .3s;}
 .about_img { width: 250px; justify-self: center;}
 .about_data {display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-bottom: 36px;}
 .about_box {background-color: var(--sub_color); border-radius: 15px; padding: 30px 10px; }
@@ -169,12 +169,12 @@ header ul a.active{background: linear-gradient(135deg, #6eb9f7,	rgba(110, 185, 2
 
 /* work */
 
-#work {min-height: 800px;}
+#works {min-height: 900px;}
 
 .filters{display: flex; margin: 30px 0;}
 .filters li {cursor: pointer; padding: 4px 16px; border-radius: 10px;}
 .filters li.active {background-color: var(--sub_text);}
-.work {display: grid; gap: 18px;}
+.work {display: grid; gap: 20px;}
 .work li{background-color: var(--sub_color); padding: 18px; border-radius: 20px;}
 
 .work li div {border-radius: 20px;margin-bottom: 14px; display: block; width: 100%;height: 45vw; overflow: hidden;}
@@ -204,6 +204,8 @@ footer small{display: block; font-size: 14px; color: #A8B6C5; padding-top: 50px;
 @media screen and (min-width: 768px) {
 
 	
+	section h2 {font-size: 36px;}
+
 	header {position: fixed; top: 0; left: 0; width: 100%;  display: flex; align-items: center;background-color: rgba(21, 32, 40, 0.5)}
 	header.color_header{background-color: var(--sub_color);box-shadow: 0 -3px 18px 2px rgba(125, 154, 203, 0.5);}
 			
@@ -236,7 +238,8 @@ footer small{display: block; font-size: 14px; color: #A8B6C5; padding-top: 50px;
 	.skill_content {display: block;}
 
 
-	.work {grid-template-columns: repeat(2, minmax(20px, max-content)); justify-content: center;}
+	.work {grid-template-columns: repeat(2, minmax(20px, 1fr)); justify-content: center;}
+	
 	.work li div { height: 200px;}
 
 
@@ -256,12 +259,14 @@ footer small{display: block; font-size: 14px; color: #A8B6C5; padding-top: 50px;
 	section{padding-top: 150px;}
 
 	header ul { gap: 0 50px;}
+	#about > div {row-gap: 100px;}
+	.about_data {column-gap: 40px;grid-template-columns: repeat(3, 250px);}
 	#skill {max-width: var(--width)}
-	.skill_container { display: grid; row-gap: 0; column-gap: 3vw; grid-template-columns: repeat(2, 1fr); justify-content: space-evenly;}
-
-	.work {max-width: var(--width); grid-template-columns: repeat(3, minmax(20px, max-content)); justify-content: space-between;}
+	.skill_container { display: grid; row-gap: 0; column-gap: 3vw; grid-template-columns: repeat(2, 1fr); justify-content: space-evenly; margin-top: 100px;}
+	.filters{margin-top: 100px;}
+	.work {max-width: var(--width); grid-template-columns: repeat(3, 1fr); justify-content: space-between; gap: 30px;}
 	.work li div { height: 250px;}
 	#contact {max-width: 100%; padding: 200px 0; margin:150px 0 0;}
-	#contact ul{max-width: 1200px; margin: 50px auto 0;}
+	#contact ul{max-width: 1200px; margin: 100px auto 0;}
 
 }
