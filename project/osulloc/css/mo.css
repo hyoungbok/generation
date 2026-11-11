@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+:root {
+    --width:100%;
+    --top:14.72vw;
+    --subTop:3.7vw;
+}
+
+.pc{display: none;}
+.mo{display: block;}
+img{width: 100%;}
+
+body{font-size: 3.8vw;}
+header {width: var(--width);}
+header > div{ justify-content: space-between;  height: auto; padding:5vw 5.83vw 5.83vw; }
+header > div h1 {width: 32.78vw;}
+header > div .mo {width: 8.33vw;}
+
+
+
+.visual ul li.slide_img1 a{height: 144.72vw; background-image: url(../img/mo/mo_main_banner01.jpg);background-size: cover;}
+.visual ul li.slide_img2 a{height: 144.72vw; background-image: url(../img/mo/mo_main_banner02.jpg);background-size: cover;}
+.visual ul li.slide_img3 a{height: 144.72vw; background-image: url(../img/mo/mo_main_banner03.jpg);background-size: cover;}
+
+.goods { padding: var(--top) 4.4% 0 ;}
+.goods h2,
+section.store h2 {font-size: 5.55vw;}
+
+.goods ul{padding-top: var(--subTop); gap: 5.5vw 0;}
+.goods ul li,
+section.milk>div li,
+.section_wrap .goods ul li {width: 47.5%;}
+
+.goods ul li .photo,
+section.milk>div li .photo{ width: 100%; height: 40vw; background-size: cover;}
+.goods ul li h3 {padding: 3vw 0 1.6vw; word-break: keep-all;}
+.goods ul li del {display: none;}
+.goods ul li .sale {padding-right: 5.77vw;}
+
+
+.long_banner01, .long_banner02, .long_banner03, .banner{padding-top: var(--top);}
+.long_banner01 a{height: 55.55vw; background-image: url(../img/mo/banner04mo.jpg); background-size: cover; }
+
+
+section.milk>div{display: block; padding-top: var(--subTop);}
+section.milk>div ul{padding-top: 6.9vw; flex-direction: row; justify-content: space-between;gap: 5.5vw 0;}
+section.milk>div li a{display: flex; flex-direction: row; flex-wrap: wrap; width: auto; height: auto; }
+section.milk>div li h3{width: 36vw; }
+
+
+section.milk>div li:nth-of-type(1) .photo{background-image: url(../img/mo/milkTea_img01.jpg);}
+section.milk>div li:nth-of-type(2) .photo{background-image: url(../img/mo/milkTea_img02.jpg);}
+section.milk>div li:nth-of-type(3) .photo{background-image: url(../img/mo/milkTea_img03.jpg);}
+section.milk>div li:nth-of-type(4) .photo{background-image: url(../img/mo/milkTea_img04.jpg);}
+
+
+section.milk>div li:nth-of-type(1):hover .photo{background-image: url(../img/mo/milkTea_img01_1.jpg);}
+section.milk>div li:nth-of-type(2):hover .photo{background-image: url(../img/mo/milkTea_img02_1.jpg);}
+section.milk>div li:nth-of-type(3):hover .photo{background-image: url(../img/mo/milkTea_img03_1.jpg);}
+section.milk>div li:nth-of-type(4):hover .photo{background-image: url(../img/mo/milkTea_img04_1.jpg);}
+
+
+
+.section_wrap {display: block;}
+.section_wrap .goods ul{gap: 0 0;}
+.section_wrap section:first-child p{padding-top: var(--subTop);} 
+.section_wrap .goods ul li .photo {width: 100%; height: 40vw;}
+.section_wrap .goods li .photo img{width: 100%; height: 100%;}
+
+.section_wrap .goods li h3{width: 36vw; }
+
+.long_banner02 a{height: 113.88vw; background-image: url(../img/mo/banner01mo.jpg); background-size: cover;}
+
+div.banner ul{display: block;}
+
+
+section.store{padding: var(--top) 4.4% 27.77vw; }
+section.store > div {display: block; padding-top: var(--subTop); text-align: center;}
+section.store > div ul{display: flex; flex-direction: row; flex-wrap: nowrap; height: auto;}
+section.store > div ul li{height: 41.66vw;}
+section.store > div ul li p{bottom: -11vw; font-size: 3vw;}
+section.store > div ul li:hover p{bottom: 0;}
+
+section.store > div div {font-size: 3.33vw; padding-right: 0; padding-top: 13.88vw;}
+section.store > div div strong {display: block; font-size: 8.88vw; padding: 5.5vw 0 5.8vw;}
+section.store > div div span.mo{display: block;}
+section.store > div div a{display: inline-block; border: 1px solid #585858; padding: 9px 25px; border-radius: 8px; font-size: 20px; color: var(--textCcolor); transition: all .5s;}
+section.store > div div a:hover {background-color: #585858; color: #fff; border: 1px solid #585858}
+
+
+
+.scroll_top{position: fixed;bottom: 15vw; right: 8vw;}
+
+.scroll_top a{width: 11vw; height: 11vw; }
+.scroll_top a img{width: 50%;}
+
+
+
+
+footer{ padding: 11.11vw 5.79vw 14.24vw; font-size: 2.77vw; }
+.ft_top{display: flex;flex-direction: column;  border-bottom: none; padding:0;}
+.ft_top h3{padding-bottom: 27px;font-size: 24px; font-weight: 500;}
+
+.customer p:nth-of-type(1){font-size: 22px;padding-bottom: 10px;}
+.customer p:nth-of-type(2){font-size: 16px;}
+.customer p:nth-of-type(2) span{display: block; font-size: 14px;}
+
+.language ul {font-size: 18px;}
+.sns {order: -1; padding-bottom: 13.88vw;}
+.sns ul {display: flex;justify-content: space-between;gap:0; width: 56.38vw;}
+.sns li a{display: block; width: 9.75vw; height: 9.75vw; background-size: 56.38vw;}
+
+
+
+
+.ft_top .sns li:nth-of-type(1) a{background-image: url(../img/mo/sprite.png);background-position: 0 0;}
+.ft_top .sns li:nth-of-type(2) a{background-image: url(../img/mo/sprite.png); background-position: -11.7vw 0;}
+.ft_top .sns li:nth-of-type(3) a{background-image: url(../img/mo/sprite.png); background-position: -23.3vw 0;}
+.ft_top .sns li:nth-of-type(4) a{background-image: url(../img/mo/sprite.png); background-position: -35vw 0;}
+.ft_top .sns li:nth-of-type(5) a{background-image: url(../img/mo/sprite.png); background-position: -46.6vw 0;}
+
+
+.ft_bottom ul{display: flex; flex-wrap: wrap; padding-top: 5.5vw; gap: 0 3.9vw; font-size: 3.33vw;}
+
+.ft_bottom small {display: block; padding-top: 11vw; font-size: 2.77vw;}
