@@ -161,9 +161,9 @@ header ul a span {display: none;}
 .skill_content li i{font-size: 24px; color: var(--sub_text); padding-top: 1px;}
 .skill_content li h3{cursor: pointer;}
 .skill_content li p {opacity: 0;line-height: 1.4; font-size: 14px;height:0; transition: all .4s;}
-.skill_content li.active i {color: var(--active_text);}
-.skill_content li.active h3  {color: var(--active_text); font-weight: 600; }
-.skill_content li.active p{opacity: 1 ;height: 10px; }
+.skill_content li.skill_active i {color: var(--active_text);}
+.skill_content li.skill_active h3  {color: var(--active_text); font-weight: 600; }
+.skill_content li.skill_active p{opacity: 1 ;height: 10px; }
 
 
 
@@ -173,7 +173,7 @@ header ul a span {display: none;}
 
 .filters{display: flex; margin: 30px 0;}
 .filters li {cursor: pointer; padding: 4px 16px; border-radius: 10px;}
-.filters li.active {background-color: var(--sub_text);}
+.filters li.wark_active {background-color: var(--sub_text);}
 .work {display: grid; gap: 20px;}
 .work li{background-color: var(--sub_color); padding: 18px; border-radius: 20px;}
 

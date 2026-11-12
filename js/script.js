@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	const btn = document.querySelectorAll('.filters li');
 	btn.forEach(tabList => {
 		tabList.addEventListener('click', () => {
-			const activeBtn = document.querySelector('.filters li.active');
+			const activeBtn = document.querySelector('.filters li.wark_active');
 			if (activeBtn) {
-				activeBtn.classList.remove('active')
+				activeBtn.classList.remove('wark_active')
 			}
-			tabList.classList.add('active');
+			tabList.classList.add('wark_active');
 		})
 	});
 })
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 	
 	/* acodion */
-	const skillTitle = document.querySelectorAll('li h3');
+	const skillTitle = document.querySelectorAll('.skill_content li h3');
 
 	function toggleAccordion(titleElement) {
 		const isExpanded = titleElement.getAttribute('aria-expanded') === 'true';
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			const otherList = other.closest('li');
 			if (otherList) {
-				otherList.classList.remove('active');
+				otherList.classList.remove('skill_active');
 			}
 		});
 
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const listItem = titleElement.closest('li');
 		if (listItem) {
-			listItem.classList.add('active')
+			listItem.classList.add('skill_active')
 		}
 	}
 
@@ -181,5 +181,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			toggleAccordion(title);
 		})
 	})
+
+
+
+	/* scroll reveal */
+	// const sr = ScrollReveal({
+	// 	origin: 'top',
+	// 	distance: '60px',
+	// 	duration: 2500,
+	// 	delay: 400,
+	// })
+	// sr.reveal(`.visual, .footer_logo, .footer_description, .footer_content`)
+	// sr.reveal(`.home_tree1`, { origin: 'left',delay:800 })
+	// sr.reveal(`.home_tree2`, { origin: 'right',delay:800 })
+	// sr.reveal(`.home_img`, { delay:800 })
+	// sr.reveal(`.category_card, .items_card`, { interval:100 })
+	// sr.reveal(`.about_img, .about_data, .footer_tree2`, { origin: 'left' })
+	// sr.reveal(`.party_images, .party_data, .footer_tree1`, { origin: 'right' })
 
 });
