@@ -8,7 +8,107 @@ document.addEventListener('DOMContentLoaded', function () {
 	window.scrollY >= 50 ? header.classList.add('color_header') : header.classList.remove('color_header');
 	}
 
-	window.addEventListener('scroll', scrollHeader)
+
+	
+
+	/* active    메뉴 클릭시 위치 이동과 active를 이용해 메뉴 변경 */
+	const sections = document.querySelectorAll('#home, section[id]')
+	const scrollActive = () => {
+		const scrollY = window.pageYOffset
+
+		sections.forEach(current => {
+			const sectionHeight = current.offsetHeight,
+				sectionTop = current.offsetTop - 58,
+				sectionId = current.getAttribute('id'),
+				sectionClass = document.querySelector('nav ul li a[href*="' + sectionId + '"]');
+			
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				sectionClass.classList.add('active')
+			} else {
+				sectionClass.classList.remove('active')
+			}
+		})
+	}
+
+	window.addEventListener('scroll', scrollHeader);
+	window.addEventListener('scroll', scrollActive);
+
+	/* dark & light */
+	const inputBtn = document.querySelector('label');
+
+	inputBtn.addEventListener('click', function () {
+		const theme = document.querySelector('.theme_button');
+		
+		document.body.classList.toggle('light');
+		theme.classList.toggle('bx-sun');
+		theme.classList.toggle('bx-moon');
+	});
+
+
+	/* modal */
+	const aboutBox = document.querySelectorAll('.about_data .about_box');
+	aboutBox.forEach((box) => {
+		const btn = box.querySelector('.about_btn');
+		const modal = box.querySelector('.about_modal');
+		const closeBtn = box.querySelector('.close');
+		const dimmed = box.querySelector('.dimmed');
+
+		if (btn && modal) {
+			btn.addEventListener('click', () => {
+				modal.classList.add('active_modal');
+				document.body.classList.add('scroll_hidden');
+			})
+		}
+
+		if (closeBtn && modal) {
+			closeBtn.addEventListener('click', () => {
+				modal.classList.remove('active_modal')
+				document.body.classList.remove('scroll_hidden');
+			})
+		}
+		if (dimmed && modal) {
+			dimmed.addEventListener('click', () => {
+				modal.classList.remove('active_modal')
+				document.body.classList.remove('scroll_hidden');
+			})
+		}
+
+	})
+	
+	/* acodion */
+	const skillTitle = document.querySelectorAll('.skill_content li h3');
+
+	function toggleAccordion(titleElement) {
+		const isExpanded = titleElement.getAttribute('aria-expanded') === 'true';
+		
+		if (isExpanded) {
+			return;
+		}
+
+		skillTitle.forEach((other) => {
+			other.setAttribute('aria-expanded', 'false');
+
+			
+			const otherList = other.closest('li');
+			if (otherList) {
+				otherList.classList.remove('skill_active');
+			}
+		});
+
+		titleElement.setAttribute('aria-expanded', 'true');
+
+		const listItem = titleElement.closest('li');
+		if (listItem) {
+			listItem.classList.add('skill_active')
+		}
+	}
+
+	skillTitle.forEach((title) => {
+		title.addEventListener('click', () => {
+			toggleAccordion(title);
+		})
+	})
+
 
 	/* mixitup */
 	const containerEl = document.querySelector('.work');
@@ -93,110 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-	/* active    메뉴 클릭시 위치 이동과 active를 이용해 메뉴 변경 */
-	const sections = document.querySelectorAll('#home, section[id]')
-	const scrollActive = () => {
-		const scrollY = window.pageYOffset
 
-		sections.forEach(current => {
-			const sectionHeight = current.offsetHeight,
-				sectionTop = current.offsetTop - 58,
-				sectionId = current.getAttribute('id'),
-				sectionClass = document.querySelector('nav ul li a[href*="' + sectionId + '"]');
-			
-			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-				sectionClass.classList.add('active')
-			} else {
-				sectionClass.classList.remove('active')
-			}
-		})
-	}
-
-	window.addEventListener('scroll', scrollActive)
-
-
-
-
-
-	/* modal */
-	const aboutBox = document.querySelectorAll('.about_data .about_box');
-	aboutBox.forEach((box) => {
-		const btn = box.querySelector('.about_btn');
-		const modal = box.querySelector('.about_modal');
-		const closeBtn = box.querySelector('.close');
-		const dimmed = box.querySelector('.dimmed');
-
-		if (btn && modal) {
-			btn.addEventListener('click', () => {
-				modal.classList.add('active_modal');
-				document.body.classList.add('scroll_hidden');
-			})
-		}
-
-		if (closeBtn && modal) {
-			closeBtn.addEventListener('click', () => {
-				modal.classList.remove('active_modal')
-				document.body.classList.remove('scroll_hidden');
-			})
-		}
-		if (dimmed && modal) {
-			dimmed.addEventListener('click', () => {
-				modal.classList.remove('active_modal')
-				document.body.classList.remove('scroll_hidden');
-			})
-		}
-
-	})
-	
-	/* acodion */
-	const skillTitle = document.querySelectorAll('.skill_content li h3');
-
-	function toggleAccordion(titleElement) {
-		const isExpanded = titleElement.getAttribute('aria-expanded') === 'true';
-		
-		if (isExpanded) {
-			return;
-		}
-
-		skillTitle.forEach((other) => {
-			other.setAttribute('aria-expanded', 'false');
-
-			
-			const otherList = other.closest('li');
-			if (otherList) {
-				otherList.classList.remove('skill_active');
-			}
-		});
-
-		titleElement.setAttribute('aria-expanded', 'true');
-
-		const listItem = titleElement.closest('li');
-		if (listItem) {
-			listItem.classList.add('skill_active')
-		}
-	}
-
-	skillTitle.forEach((title) => {
-		title.addEventListener('click', () => {
-			toggleAccordion(title);
-		})
-	})
-
-
-
-	/* scroll reveal */
-	// const sr = ScrollReveal({
-	// 	origin: 'top',
-	// 	distance: '60px',
-	// 	duration: 2500,
-	// 	delay: 400,
-	// })
-	// sr.reveal(`.visual, .footer_logo, .footer_description, .footer_content`)
-	// sr.reveal(`.home_tree1`, { origin: 'left',delay:800 })
-	// sr.reveal(`.home_tree2`, { origin: 'right',delay:800 })
-	// sr.reveal(`.home_img`, { delay:800 })
-	// sr.reveal(`.category_card, .items_card`, { interval:100 })
-	// sr.reveal(`.about_img, .about_data, .footer_tree2`, { origin: 'left' })
-	// sr.reveal(`.party_images, .party_data, .footer_tree1`, { origin: 'right' })
 
 });
