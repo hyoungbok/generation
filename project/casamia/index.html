@@ -56,6 +56,22 @@
 				},
 			});
 
+			const items = document.querySelectorAll('.room .item');
+			items.forEach((item) => {
+				const imgHover = item.querySelector(':scope > img');
+
+				if (imgHover) {
+					// 아이콘에 마우스를 올렸을 때: 모든 active 제거 (CSS :hover 항목만)
+					imgHover.addEventListener('mouseenter', () => {
+						items.forEach((e)=>{
+							e.classList.remove('active');
+							
+						}) 
+					});
+				}
+			});
+
+
 		})
 
 	</script>
@@ -75,8 +91,8 @@
 			<h1><a href="#"><img src="img/logo.png" alt="casamia"></a></h1>
 			<nav class="gnb">
 				<ul>
-					<li><a href="#">거실가구</a></li>
-					<li><a href="#">침실가구</a></li>
+					<li><a href="product.html">거실가구</a></li>
+					<li><a href="product.html">침실가구</a></li>
 					<li><a href="#">주방가구</a></li>
 					<li><a href="#">수납가구</a></li>
 					<li><a href="#">서제가구</a></li>
@@ -242,19 +258,51 @@
 			<div>
 				<div class="item">
 					<img src="img/roomplus.png" alt="보기">
-					<a href="#"><img src="img/room01.jpg" alt="코번소파(옵셥 택1) 3,100,000원 바로가기"></a>
+					<a href="#">
+						<img src="img/room01.jpg" alt class="room_photo">
+						<div>
+							<p>Casamia</p>
+							<h3>코번 소파 (오션 택1)</h3>
+							<p>3,100,000원</p>
+						</div>
+						<img src="img/right_arrow.png" alt class="right_arrow">
+					</a>
 				</div>
 				<div class="item">
 					<img src="img/roomplus.png" alt="보기">
-					<a href="#"><img src="img/room02.jpg" alt="코번오토만(옵셥 택1) 580,000원 바로가기"></a>
+					<a href="#">
+						<img src="img/room02.jpg" alt class="room_photo">
+						<div>
+							<p>Casamia</p>
+							<h3>코번 오토만 (컬럭 택1)</h3>
+							<p>580,000원</p>
+						</div>
+						<img src="img/right_arrow.png" alt class="right_arrow">
+					</a>
+				</div>
+				<div class="item active">
+					<img src="img/roomplus.png" alt="보기">
+					<a href="#">
+						<img src="img/room03.jpg" alt class="room_photo">
+						<div>
+							<p>Casamia</p>
+							<h3>뉴리네아 사틴유리 마블 원형 사이드 테이블</h3>
+							<p>509,000원</p>
+						</div>
+						<img src="img/right_arrow.png" alt class="right_arrow">
+					</a>
 				</div>
 				<div class="item">
 					<img src="img/roomplus.png" alt="보기">
-					<a href="#"><img src="img/room03.jpg" alt="뉴리네아 사틴유리마블 원형 사이드테이블 580,000원 바로가기"></a>
-				</div>
-				<div class="item">
-					<img src="img/roomplus.png" alt="보기">
-					<a href="#"><img src="img/room04.jpg" alt="뉴리네아 사틴유리마블 타원형 티테이블 92 0,000원 바로가기"></a>
+					<a href="#">
+						<img src="img/room04.jpg" alt class="room_photo">
+						<div>
+							<p>Casamia</p>
+							<h3>뉴리네아 사틴유리 마블 타원형 티테이블</h3>
+							<p>920,000원</p>
+						</div>
+						<img src="img/right_arrow.png" alt class="right_arrow">
+					</a>
 				</div>
 			</div>
 		</section>
