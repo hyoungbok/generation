@@ -304,7 +304,7 @@ footer > div small{padding-top: 11vw; font-size: 3.33vw; text-align: center;}
 
 
     .table { padding: 277px 0 398px; margin-top: 431px;}
-    .text_box p:nth-of-type(1){font-size: 66x; padding-bottom: 87px;}
+    .text_box p:nth-of-type(1){font-size: 66px; padding-bottom: 87px;}
     .text_box p:nth-of-type(2){font-size: 38px; padding-bottom: 137px;}
     .text_box a{font-size: 38px;padding: 27px 69px;  border-radius: 27pxvw;}
     .text_box a img{width: 44px; height: 44px;margin-left: 27px; }

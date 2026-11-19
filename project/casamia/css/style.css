@@ -340,3 +340,58 @@ footer > div small{width: 100%; padding-top: 50px; font-size: 10px;}
 
 .detailed {max-width: 1920px; padding: 200px 0 350px; }
 .detailed_img{min-width: var(--width); height: 14130px; background-image: url(../img/pro_img/detailed_page.jpg); background-repeat: no-repeat; background-position: center center; background-size: cover; margin: 0 auto;}
+
+
+/* event */
+main.event {color: #3A322D;}
+main.event section{padding: 0;margin: 0;}
+main.event section h2{text-align: left;}
+main.event .event_main{min-width: var(--width);height: 1005px; background-image: url(../img/event_img/event_main.png); background-repeat: no-repeat; background-size: cover; background-position: center -150px; padding: 110px 0 0 18%;}
+@media screen and (max-width : 1400px) {
+	main.event .event_main{padding-left: 250px;}
+	
+}
+main.event .event_main h2{font-size: 50px; font-weight: 500;}
+main.event .event_main p{font-size: 30px;padding-top: 30px;}
+
+main.event .proposal{min-width: var(--width);background-color: #FCF6F0; padding: 150px 0; margin-top: 200px;}
+main.event .proposal > div{display: flex; gap: 0 30px;width: var(--width); margin: 0 auto; }
+main.event .proposal > div:nth-of-type(2) {flex-direction: row-reverse; padding: 100px 0 ;}
+
+main.event .product_wrap > p,
+main.event .product_wrap > h3{margin-left: 80px;}
+main.event .product_wrap .badge{display: inline-block; background-color: #3A322D; font-size: 20px; font-weight: 500; color: #fff;padding: 5px 15px;margin-top: 106px; border-radius: 20px;}
+main.event .product_wrap h3{font-size: 46px;font-weight: 600; padding: 30px 0 20px;}
+main.event .product_wrap .sub_text{font-size: 28px;}
+main.event .product_wrap .product_list{display: flex; gap: 0 20px; padding-top: 100px;}
+main.event .product_wrap .list_photo{position: relative; width: 250px;height: 250px; background-position: center center; overflow: hidden; background-size: 100%; transition: all .3s ease}
+main.event .product_wrap .photo01{background-image: url(../img/event_img/event_01_01.jpg); }
+main.event .product_wrap .photo02{background-image: url(../img/event_img/event_01_02.jpg); }
+main.event .product_wrap .photo03{background-image: url(../img/event_img/event_01_03.jpg); }
+main.event .product_wrap .photo04{background-image: url(../img/event_img/event_02_01.jpg); }
+main.event .product_wrap .photo05{background-image: url(../img/event_img/event_02_02.jpg); }
+main.event .product_wrap .photo06{background-image: url(../img/event_img/event_02_03.jpg); }
+main.event .product_wrap .photo07{background-image: url(../img/event_img/event_03_01.jpg); }
+main.event .product_wrap .photo08{background-image: url(../img/event_img/event_03_02.jpg); }
+main.event .product_wrap .photo09{background-image: url(../img/event_img/event_03_03.jpg); }
+main.event .product_wrap .list_photo img{position: absolute;bottom: -100px;right: 10px;transition: all .3s ease}
+
+main.event .product_wrap a:hover .list_photo{background-size: 110%;}
+main.event .product_wrap a:hover .list_photo img{bottom: 10px;}
+
+main.event .product_list a h4{padding: 20px 0 20px;}
+main.event .event_long_banner {display: flex;flex-direction: column; justify-content: center;align-items: center; min-width: var(--width); height: 380px; background-image: url(../img/event_img/sub_banner.jpg); margin-top: 150px;}
+main.event .event_long_banner p:nth-of-type(1){font-size: 50px;}
+main.event .event_long_banner p:nth-of-type(2){font-size: 26px; padding-top: 30px;}
+main.event .event_long_banner p:nth-of-type(3){font-size: 20px; padding-top: 10px;}
+main.event .event_long_banner a{display: flex; align-items: center; gap: 10px;background-color: #3A322D; padding: 10px 20px; color: #fff; border-radius: 8px; margin-top: 30px;transition: all .3s ease}
+main.event .event_long_banner a:hover {background-color: rgba(58, 50, 45, 0.7);}
+main.event .event_long_banner a img{width: 20px;height: 20px;}
+
+main.event .event_life{width: var(--width); margin: 200px auto ; padding: 0 30px; }
+main.event .event_life > h2{font-size: 46px; font-weight: 500;text-align: center;}
+main.event .event_life > p{font-size: 28px; font-weight: 500; padding-top: 30px;text-align: center;}
+main.event .lift_photos{display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px 0;margin-top: 100px; }
+
+main.event .lift_photos li{transition: all .3s ease;}
+main.event .lift_photos li:hover {box-shadow: 0 0 14px rgba(0, 0, 0, .5);}
