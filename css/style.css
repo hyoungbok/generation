@@ -215,8 +215,10 @@ footer small{display: block; font-size: 14px; color: #A8B6C5; padding-top: 50px;
  .graph .graph_bg {width: 75%;}
  .graph .graph_num {font-size: 14px;}
  .filters li{font-size: 16px; flex-shrink: 0; padding: 4px 14px;}
- footer h2 {font-size: 8.7vw;}
- footer small{font-size: 3.7vw; padding-top: 30px;}
+}
+@media screen and (max-width: 444px){
+ footer h2 {font-size: 8.5vw;}
+ footer small{font-size: 3.6vw; padding-top: 30px;}
 }
 
 @media screen and (min-width: 768px) {
