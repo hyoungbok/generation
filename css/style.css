@@ -194,7 +194,7 @@ header ul a span {display: none;}
 #contact {padding-bottom: var(--p_top); background-image: url(../img/contact_bg.jpg); background-size: cover; background-repeat: no-repeat; }
 #contact ul{display: grid; row-gap: 30px; margin-top: 50px; padding: 0 30px;}
 #contact ul li,
-#contact ul li a{display: flex; align-items: center; flex-wrap: wrap; column-gap: 10px; }
+#contact ul li a{display: flex; align-items: center; column-gap: 10px; }
 
 #contact ul li i {background-color: var(--sub_color); padding: 10px; color: var(--main_text); border-radius: 10px; font-size: 20px;}
 #contact ul li p {border-bottom: 1px solid var(--main_text); padding-bottom: 2px;}
